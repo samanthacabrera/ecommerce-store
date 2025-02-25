@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import products from "./products.js";
-import About from "./About.jsx";
+import Mission from "./Mission.jsx";
 
 const Home = () => {
     return (
         <div className="flex flex-col items-center space-y-12 p-12">
-            <h1 className="text-2xl tracking-widest">yarn<span className="italic">sara</span></h1>
-            <p>100% upcycled crocheted yoga accessories</p>   
+            <div className="text-center pt-20">
+                <h1 className="text-4xl tracking-widest">yarn<span className="italic">sara</span></h1>
+                <p className="tracking-wide py-4">100% upcycled crocheted yoga accessories</p>   
+            </div>
             <h3>Products</h3>
             <div>
                 {products.map((product) => (
@@ -23,7 +25,7 @@ const Home = () => {
                  </Link>
                 ))}
             </div>
-            <About/>
+            <Mission/>
         </div>
     )
 }
