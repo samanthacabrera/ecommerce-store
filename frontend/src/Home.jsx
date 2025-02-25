@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import products from "./products.js";
 import Mission from "./Mission.jsx";
+import Policies from "./Policies.jsx";
 
 const Home = () => {
     return (
@@ -25,7 +26,8 @@ const Home = () => {
                  </Link>
                 ))}
             </div>
-            <Mission/>
+            <Mission />
+            <Policies/>
         </div>
     )
 }
