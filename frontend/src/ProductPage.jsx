@@ -11,6 +11,7 @@ const ProductPage = () => {
         <div className="flex flex-col items-center space-y-12 p-12">
             <h1 className="text-2xl">{product.name}</h1>
             <p>${product.price}</p>
+            <img src={product.image} alt={product.name} className="h-60"/>
             <div className="flex space-x-4">
                 <Link to="/">Add to Cart</Link>
                 <Link to="/">Back to Homepage</Link>
