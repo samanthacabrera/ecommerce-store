@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import products from "./products.js";
 import Mission from "./Mission.jsx";
 import Policies from "./Policies.jsx";
+import EtsyStore from "./EtsyStore.jsx";
 
 const Home = () => {
     return (
@@ -26,7 +27,8 @@ const Home = () => {
                  </Link>
                 ))}
             </div>
-            <Mission />
+            <Mission/>
+            <EtsyStore/>
             <Policies/>
         </div>
     )
