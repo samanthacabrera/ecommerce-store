@@ -10,9 +10,14 @@ const Home = () => {
             <div>
                 {products.map((product) => (
                  <Link key={product.id} to={`/product/${product.id}`}>
-                    <div className="border p-4 m-2 hover:scale-105 transition duration-300 ease-in-out">
+                    <div className="group border p-4 m-2 hover:scale-105 transition duration-300 ease-in-out">
                         <h3>{product.name}</h3>
                         <p>${product.price}</p>
+                        <img 
+                            src={product.image} 
+                            alt={product.name}
+                            className="absolute left-full -top-12 mx-12 w-40 h-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow"
+                        />
                     </div>
                  </Link>
                 ))}
