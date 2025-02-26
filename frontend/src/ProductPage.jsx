@@ -16,7 +16,11 @@ const ProductPage = () => {
                 className="h-80 w-auto object-cover rounded-lg shadow-md"
             />
             <p className="text-lg tracking-wide">${product.price}</p>
+            <p className="text-sm tracking-wide">
+                {product.inventory > 0 ? `In Stock: ${product.inventory}` : "Out of Stock"}
+            </p>
             <p className="text-center leading-loose">{product.description}</p>
+
             <div className="flex space-x-6 mt-6">
                 <Link 
                     to="/" 
