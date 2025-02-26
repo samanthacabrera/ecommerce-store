@@ -1,8 +1,10 @@
 import { useParams, Link } from "react-router-dom";
+import { useCart } from "./CartContext";
 import products from "./products.js";
 
-const ProductPage = ({ addToCart }) => {
+const ProductPage = () => {
   const { id } = useParams();
+  const { addToCart } = useCart();
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product)
@@ -19,7 +21,7 @@ const ProductPage = ({ addToCart }) => {
       <p className="text-lg tracking-wide">${product.price}</p>
       <p className="text-center leading-loose">{product.description}</p>
 
-      <p className={`text-sm tracking-wide ${product.inventory > 0 ? "text-green-600" : "text-red-600"}`}>
+      <p className="text-sm tracking-wide">
         {product.inventory > 0 ? `In Stock: ${product.inventory}` : "Out of Stock"}
       </p>
 

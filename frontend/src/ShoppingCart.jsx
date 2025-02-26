@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { useCart } from "./CartContext";
 
-const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
+const ShoppingCart = () => {
+  const { cart, updateQuantity, removeFromCart } = useCart();
+
   return (
-    <div className="max-w-2xl mx-auto space-y-12 p-12">
+    <div className="max-w-2xl mx-auto min-h-screen space-y-12 p-12">
       <h1 className="text-4xl tracking-wide pt-24">Shopping Cart</h1>
 
       {cart.length === 0 ? (
-        <p className="text-gray-500 text-sm">Your cart is empty.</p>
+        <p className="opacity-50 text-sm">Your cart is empty.</p>
       ) : (
         <div className="space-y-8">
           {cart.map((item) => (

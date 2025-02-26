@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "./CartContext";
 
-const Checkout = ({ cart, clearCart }) => {
+const Checkout = () => {
   const navigate = useNavigate();
+  const { cart, clearCart } = useCart(); 
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
