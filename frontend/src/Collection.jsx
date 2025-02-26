@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import products from "./products";
 
 const Collection = () => {
@@ -27,6 +28,12 @@ const Collection = () => {
               </h2>
               <p className="text-lg opacity-60">${product.price.toFixed(2)}</p>
               <p className="text-sm opacity-70 leading-relaxed">{product.description}</p>
+              <Link 
+                to={`/product/${product.id}`} 
+                className="inline-block border p-2 text-sm"
+              >
+                View Product
+              </Link>
             </div>
           </div>
         ))}

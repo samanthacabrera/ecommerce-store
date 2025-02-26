@@ -39,7 +39,7 @@ const ShoppingCart = ({ cart }) => {
           Continue Shopping
         </Link>
         <Link 
-          to="/" 
+          to="/checkout" 
           className="border p-2 text-sm"
         >
           Checkout

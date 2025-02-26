@@ -5,6 +5,8 @@ import Home from "./Home";
 import Collection from "./Collection";
 import ProductPage from "./ProductPage";
 import ShoppingCart from "./ShoppingCart";
+import Checkout from "./Checkout";
+import Confirmation from "./Confirmation";
 import Footer from "./Footer";
 
 function App() {
@@ -25,6 +27,11 @@ function App() {
     });
   };
 
+  const clearCart = () => {
+    setCart([]); 
+  };
+
+
   return (
     <div>
       <Navbar cartCount={cart.length} />
@@ -33,6 +40,8 @@ function App() {
         <Route path="/collection" element={<Collection />} />
         <Route path="/product/:id" element={<ProductPage addToCart={addToCart} />} />
         <Route path="/cart" element={<ShoppingCart cart={cart} />} />
+        <Route path="/checkout" element={<Checkout cart={cart} clearCart={clearCart} />} />
+        <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
       <Footer/>
     </div>
