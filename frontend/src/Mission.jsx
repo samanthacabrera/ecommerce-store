@@ -17,9 +17,6 @@ const Mission = () => {
             <p>
                 'Yarn<span className="italic">sana</span>' reflects the heart of this project. 'Yarn' represents the discarded fibers are given new purpose. 'Sana,' drawn from the idea of reincarnation, speaks to renewal, transformation, and the endless cycle of rebirth.
             </p>
-            <p>
-                Beyond creating eco-friendly yoga accessories, Yarnsana is about giving back. 50% of all proceeds go toward supporting children's yoga programs, making mindfulness and movement more accessible to the next generation.
-            </p>
         </div>
     );
 };
