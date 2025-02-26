@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import products from "./products.js";
 import Hero from "./Hero.jsx";
 import Mission from "./Mission.jsx";
+import Process from "./Process.jsx";
 import Policies from "./Policies.jsx";
 import EtsyStore from "./EtsyStore.jsx";
 
@@ -25,7 +26,8 @@ const Home = () => {
                  </Link>
                 ))}
             </div>
-            <Mission/>
+            <Mission />
+            <Process />
             <EtsyStore/>
             <Policies/>
         </div>

@@ -9,9 +9,6 @@ const Mission = () => {
                 I personally source t-shirts, blankets, and other fabrics from thrift stores, focusing on materials that are unlikely to sell and would otherwise end up in landfills. Each fabric is thoughtfully chosen for its quality and potential, then repurposed into unique, hand-crocheted yoga accessories.
             </p>
             <p>
-                Different fabrics require different methods to be transformed into usable yarn. Cotton and jersey materials are cut into continuous strips and joined to create soft yet strong fibers. Woven fabrics are deconstructed and spun into a thicker, textured yarn. Once prepared, I crochet each piece by hand, ensuring quality, durability, and uniqueness. This slow and intentional process means no two pieces are exactly alike.
-            </p>
-            <p>
                 Due to the handmade nature of each item and the time-intensive preparation of upcycled yarn, production times can vary. Sustainability and high-quality craftsmanship take time, and I prioritize both in every product.
             </p>
         </div>
