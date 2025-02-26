@@ -36,10 +36,10 @@ const ProductPage = ({ addToCart }) => {
           Add to Cart
         </button>
         <Link
-          to="/"
+          to="/collection"
           className="border rounded-full px-6 py-2 hover:scale-105 transition duration-200"
         >
-          Back to Homepage
+          Continue Shopping
         </Link>
       </div>
     </div>
