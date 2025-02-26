@@ -5,6 +5,7 @@ import Home from "./Home";
 import Collection from "./Collection";
 import ProductPage from "./ProductPage";
 import ShoppingCart from "./ShoppingCart";
+import Footer from "./Footer";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -33,6 +34,7 @@ function App() {
         <Route path="/product/:id" element={<ProductPage addToCart={addToCart} />} />
         <Route path="/cart" element={<ShoppingCart cart={cart} />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

@@ -9,7 +9,7 @@ const Home = () => {
         <div className="flex flex-col items-center space-y-12 p-12">
             <div className="text-center pt-20">
                 <h1 className="text-4xl tracking-widest">yarn<span className="italic">sara</span></h1>
-                <p className="tracking-wide py-4">100% upcycled crocheted yoga accessories</p>   
+                <p className="tracking-wide py-4">100% upcycled & handcrafted yoga accessories.</p>   
             </div>
             <h3>Products</h3>
             <div>
