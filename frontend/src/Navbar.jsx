@@ -9,7 +9,7 @@ const Navbar = () => {
 
             <div className="flex space-x-6">
                 <Link to="/" className="hover:scale-105 transition duration-300 ease-in-out">Home</Link>
-                <Link to="/" className="hover:scale-105 transition duration-300 ease-in-out">Products</Link>
+                <Link to="/collection" className="hover:scale-105 transition duration-300 ease-in-out">Collection</Link>
                 <Link to="/" className="hover:scale-105 transition duration-300 ease-in-out">About</Link>
             </div>
         </nav>

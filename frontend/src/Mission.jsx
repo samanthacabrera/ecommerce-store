@@ -14,9 +14,6 @@ const Mission = () => {
             <p>
                 Due to the handmade nature of each item and the time-intensive preparation of upcycled yarn, production times can vary. Sustainability and high-quality craftsmanship take time, and I prioritize both in every product.
             </p>
-            <p>
-                'Yarn<span className="italic">sana</span>' reflects the heart of this project. 'Yarn' represents the discarded fibers are given new purpose. 'Sana,' drawn from the idea of reincarnation, speaks to renewal, transformation, and the endless cycle of rebirth.
-            </p>
         </div>
     );
 };
