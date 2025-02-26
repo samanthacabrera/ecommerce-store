@@ -3,7 +3,7 @@ const products = [
     id: 1,
     name: "Yoga Mat Strap",
     price: 59.99,
-    inventory: 22,
+    inventory: 12,
     image: "/strap.webp",
     description: "A durable, hand-crocheted yoga mat strap made from upcycled cotton and synthetic fabric blends sourced from thrift stores in Denver, CO. Designed for a secure fit, it features reinforced stitching and a flexible structure that accommodates most standard and extra-thick yoga mats. The lightweight design allows for easy transport, making it a practical and sustainable alternative to conventional straps."
   },

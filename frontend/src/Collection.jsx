@@ -4,7 +4,7 @@ import products from "./products";
 const Collection = () => {
   return (
     <div className="px-6 py-20 max-w-5xl mx-auto space-y-20">
-      <h1 className="text-4xl text-center tracking-wide uppercase">Explore Our Collection</h1>
+      <h1 className="text-6xl text-center italic my-24">Explore Our Collection</h1>
       
       <div className="space-y-20">
         {products.map((product, index) => (

@@ -1,21 +1,19 @@
 import { Link } from "react-router-dom";
 import products from "./products.js";
+import Hero from "./Hero.jsx";
 import Mission from "./Mission.jsx";
 import Policies from "./Policies.jsx";
 import EtsyStore from "./EtsyStore.jsx";
 
 const Home = () => {
     return (
-        <div className="flex flex-col items-center space-y-12 p-12">
-            <div className="text-center pt-20">
-                <h1 className="text-4xl tracking-widest">yarn<span className="italic">sara</span></h1>
-                <p className="tracking-wide py-4">100% upcycled & handcrafted yoga accessories.</p>   
-            </div>
-            <h3>Products</h3>
+        <div className="flex flex-col items-center space-y-80 p-12">
+            <Hero/>
             <div>
+                <h3 className="text-4xl text-center italic mb-24">Our Collection</h3>
                 {products.map((product) => (
                  <Link key={product.id} to={`/product/${product.id}`}>
-                    <div className="group border p-4 m-2 hover:scale-105 transition duration-300 ease-in-out">
+                    <div className="group border p-4 my-12 hover:scale-105 transition duration-300 ease-in-out">
                         <h3>{product.name}</h3>
                         <p>${product.price}</p>
                         <img 

@@ -1,9 +1,9 @@
 const Policies = () => {
     return (
         <div className="max-w-2xl mx-auto p-12 space-y-12">
-            <h2 className="text-3xl text-center">Shop Policies</h2>
+            <h2 className="text-4xl text-center italic mb-24">Shop Policies</h2>
             <p>
-                Transparency and sustainability are at the core of Yarnsara. Please read through the shop policies before placing an order to ensure a smooth experience.
+                Transparency and sustainability are at the core of Yarn<span className="italic">sara</span>. Please read through the shop policies before placing an order to ensure a smooth experience.
             </p>
             <div>
                 <h3>Shipping</h3>
@@ -14,7 +14,7 @@ const Policies = () => {
             <div>
             <h3 >Payment Methods</h3>
                 <p>
-                    Yarnsara accepts all major credit/debit cards, PayPal, and Apple Pay. Payments are securely processed to ensure a safe transaction.
+                    Yarn<span className="italic">sara</span> accepts all major credit/debit cards, PayPal, and Apple Pay. Payments are securely processed to ensure a safe transaction.
                 </p>
             </div>
             <div>
@@ -32,7 +32,7 @@ const Policies = () => {
             <div>
                 <h3>Sustainability Commitment</h3>
                 <p>
-                    Yarnsara is committed to reducing waste. Packaging is minimal and plastic-free.  
+                    Yarn<span className="italic">sara</span> is committed to reducing waste. Packaging is minimal and plastic-free.  
                 </p>
             </div>
             <div>
