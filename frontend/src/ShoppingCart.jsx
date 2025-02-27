@@ -14,8 +14,8 @@ const ShoppingCart = () => {
         <div className="space-y-8">
           {cart.map((item) => (
             <div 
-              key={item.id} 
-              className="flex justify-between items-center border-b border-gray-300 pb-6 transition-transform duration-300 hover:scale-[1.02]"
+              key={`${item.id}-${item.color}`} 
+              className="flex justify-between items-center border-b border-gray-300 pb-6 transition-all duration-300 hover:scale-[1.01]"
             >
               <div className="flex items-center space-x-6">
                 <img 
@@ -25,20 +25,21 @@ const ShoppingCart = () => {
                 />
                 <div>
                   <h2 className="text-lg font-medium tracking-wide">{item.name}</h2>
+                  <p className="text-sm">Color: {item.color.charAt(0).toUpperCase() + item.color.slice(1)}</p>
                   <p>${item.price.toFixed(2)}</p>
                   <div className="flex items-center space-x-4 mt-2">
                     <button 
-                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      onClick={() => updateQuantity(item.id, item.color, item.quantity - 1)}
                       disabled={item.quantity === 1}
-                      className="border px-3 py-1 rounded-full transition hover:bg-gray-200"
+                      className="border px-3 py-1 rounded-full hover:scale-105 transition ease-in-out"
                     >
                       −
                     </button>
                     <span className="text-lg">{item.quantity}</span>
                     <button 
-                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      disabled={item.quantity >= item.inventory} 
-                      className="border px-3 py-1 rounded-full transition hover:bg-gray-200"
+                      onClick={() => updateQuantity(item.id, item.color, item.quantity + 1)}
+                      disabled={item.quantity >= item.inventory[item.color]} 
+                      className="border px-3 py-1 rounded-full hover:scale-105 transition ease-in-out"
                     >
                       +
                     </button>
@@ -46,8 +47,8 @@ const ShoppingCart = () => {
                 </div>
               </div>
               <button 
-                onClick={() => removeFromCart(item.id)}
-                className="text-red-600 text-sm hover:underline"
+                onClick={() => removeFromCart(item.id, item.color)}
+                className="text-red-600 bg-white rounded px-4 py-1 text-xs opacity-60 hover:opacity-80 transition ease-in-out"
               >
                 Remove
               </button>

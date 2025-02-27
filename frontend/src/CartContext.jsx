@@ -5,33 +5,32 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
-    const addToCart = (product) => {
+    const addToCart = (product, color) => {
         setCart((prevCart) => {
-            const existingItem = prevCart.find((item) => item.id === product.id);
-
+            const existingItem = prevCart.find((item) => item.id === product.id && item.color === color);
             if (existingItem) {
                 return prevCart.map((item) =>
-                    item.id === product.id
-                        ? { ...item, quantity: Math.min(item.quantity + 1, product.inventory) }
+                    item.id === product.id && item.color === color
+                        ? { ...item, quantity: item.quantity + 1 }
                         : item
                 );
-            } else {
-                return [...prevCart, { ...product, quantity: Math.min(1, product.inventory) }];
             }
+            return [...prevCart, { ...product, color, quantity: 1 }];
         });
     };
 
-
-    const updateQuantity = (productId, newQuantity) => {
+    const updateQuantity = (productId, color, newQuantity) => {
         setCart((prevCart) =>
             prevCart.map((item) =>
-                item.id === productId ? { ...item, quantity: newQuantity } : item
+                item.id === productId && item.color === color
+                    ? { ...item, quantity: newQuantity }
+                    : item
             )
         );
     };
 
-    const removeFromCart = (productId) => {
-        setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+    const removeFromCart = (productId, color) => {
+        setCart((prevCart) => prevCart.filter((item) => !(item.id === productId && item.color === color)));
     };
 
     const clearCart = () => {
