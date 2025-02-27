@@ -2,26 +2,28 @@ const products = [
   {
     id: 1,
     name: "Yoga Mat Strap",
-    price: 59.99,
+    price: 79.99,
     inventory: {
       light: 2,
       dark: 1,
       multi: 1
     },
     image: "/strap.webp",
-    description: "A durable, hand-crocheted yoga mat strap made from upcycled cotton and synthetic fabric blends sourced from thrift stores in Denver, CO. Designed for a secure fit, it features reinforced stitching and a flexible structure that accommodates most standard and extra-thick yoga mats. The lightweight design allows for easy transport, making it a practical and sustainable alternative to conventional straps."
+    material: "100% Cotton",
+    description: "Our hand-crocheted yoga mat strap made entirely from upcycled 100% cotton textiles. Cotton provides natural softness, breathability, and strength, ensuring a secure hold without excessive stretching. The flexible yet durable weave allows for easy carrying, while the use of reclaimed materials ensures each strap uniquely one of a kind."
   },
   {
     id: 2,
     name: "Yoga Mat Carrier",
-    price: 79.99,
+    price: 99.99,
     inventory: {
       light: 0,
       dark: 1,
       multi: 0
     },
     image: "/carrier.avif",
-    description: "A handcrafted yoga mat carrier made from reclaimed textile materials, including cotton, linen, and polyester blends. Each carrier features a breathable, open-weave crochet pattern for ventilation and a reinforced shoulder strap for added support. The upcycled materials ensure that no two carriers are identical, reducing textile waste while offering a functional and eco-friendly carrying solution."
+    material: "Polyester-Cotton Blend",
+    description: "Our hand-crocheted yoga mat carrier is made from 100% upcycled cotton-polyester blends. The cotton provides breathability, while the polyester enhances durability and shape retention. The open-weave design improves ventilation, and the reinforced strap ensures reliable support. Each carrier is made from reclaimed materials, resulting in a one-of-a-kind product."
   }
 ];
 
