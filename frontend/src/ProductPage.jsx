@@ -59,6 +59,25 @@ const ProductPage = () => {
         alt={product.name}
         className="h-80 w-auto object-cover rounded-lg shadow-md"
       />
+
+      <div className="border border-gray-400 p-4 rounded-md text-sm w-full max-w-xs text-center tracking-wide">
+        <p className="uppercase font-medium">Fabric Content</p>
+        <hr className="my-2 border-gray-300" />
+        <p>{product.material}</p>
+        <p>{product.saved} Upcycled T-shirts</p>
+
+        <p className="pt-8 uppercase font-medium">Size & Fit</p>
+        <hr className="my-2 border-gray-300" />
+        <p>Adjustable Fit</p>
+        <p>One Size Fits Most Mats</p>
+        <p>Lightweight & Compact</p>
+       
+        <p className="pt-8 uppercase font-medium">Care Instructions</p>
+        <hr className="my-2 border-gray-300" />
+        <p>Spot Clean Only</p>
+        <p>Lay Flat to Dry</p>
+      </div>
+      
       <p className="text-lg tracking-wide">${product.price}</p>
       <p className="text-center leading-loose">{product.description}</p>
 
