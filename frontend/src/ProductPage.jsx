@@ -1,28 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "./CartContext";
-import products from "./products.js";
 
 const ProductPage = () => {
   const { id } = useParams();
   const { addToCart, cart } = useCart();
+
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [addingToCart, setAddingToCart] = useState(false);
 
-  const product = products.find((p) => p.id === parseInt(id));
-  if (!product) {
-    return <h2 className="text-center text-xl mt-20">Product not found</h2>;
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(`http://localhost:5001/api/products/${id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch product");
+        }
+        const data = await response.json();
+        setProduct(data);
+        if (Object.keys(data.inventory).length > 0) {
+          setSelectedColor(Object.keys(data.inventory)[0]);
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (loading) {
+    return <h2 className="text-center text-xl mt-20">Loading...</h2>;
   }
 
-  if (!selectedColor && Object.keys(product.inventory).length > 0) {
-    setSelectedColor(Object.keys(product.inventory)[0]);
+  if (error) {
+    return <h2 className="text-center text-xl mt-20 text-red-500">{error}</h2>;
+  }
+
+  if (!product) {
+    return <h2 className="text-center text-xl mt-20">Product not found</h2>;
   }
 
   const cartItem = cart.find(
     (item) => item.id === product.id && item.color === selectedColor
   );
   const inCartCount = cartItem ? cartItem.quantity : 0;
-  const availableStock = product.inventory[selectedColor] || 0;
+  const availableStock = selectedColor ? product.inventory[selectedColor] || 0 : 0;
+
+  const handleAddToCart = () => {
+    setAddingToCart(true);
+    setTimeout(() => {
+      addToCart(product, selectedColor);
+      setAddingToCart(false);
+    }, 500);
+  };
 
   const getColorClass = (color) => {
     switch (color) {
@@ -32,15 +68,9 @@ const ProductPage = () => {
         return "bg-black";
       case "multi":
         return "bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500";
+      default:
+        return "";
     }
-  };
-
-  const handleAddToCart = () => {
-    setAddingToCart(true);
-    setTimeout(() => {
-      addToCart(product, selectedColor);
-      setAddingToCart(false);
-    }, 500);
   };
 
   return (
@@ -139,7 +169,6 @@ const ProductPage = () => {
       Buy Now
     </Link>
   </div>
-
 
       </div>
     </div>
