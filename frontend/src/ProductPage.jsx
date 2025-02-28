@@ -44,23 +44,27 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-10 p-12 max-w-3xl mx-auto">
+    <div className="flex flex-col items-center space-y-40 p-12 max-w-3xl mx-auto">
       
       <nav className="w-full tracking-wide pt-24">
         <Link to="/" className="hover:opacity-80 transition ease-in-out">Home</Link> &gt;{" "}
         <Link to="/collection" className="hover:opacity-80 transition ease-in-out">Collection</Link> &gt;{" "}
         <span className="italic">{product.name}</span>
       </nav>
-
-
+      
       <h1 className="text-6xl tracking-wide uppercase">{product.name}</h1>
+
+      <div className="flex flex-col lg:flex-row lg:space-x-8 w-full">
       <img
         src={product.image}
         alt={product.name}
         className="h-80 w-auto object-cover rounded-lg shadow-md"
       />
+       <p className="text-justify tracking-wide lg:w-full lg:pl-24 self-center leading-loose">{product.description}</p>
+      </div>
 
-      <div className="border border-gray-400 p-4 rounded-md text-sm w-full max-w-xs text-center tracking-wide">
+    
+      <div className="border border-gray-400 p-4 rounded-md text-sm w-1/2 mx-auto text-center tracking-wide">
         <p className="uppercase font-medium">Fabric Content</p>
         <hr className="my-2 border-gray-300" />
         <p>{product.material}</p>
@@ -71,16 +75,14 @@ const ProductPage = () => {
         <p>Adjustable Fit</p>
         <p>One Size Fits Most Mats</p>
         <p>Lightweight & Compact</p>
-       
+
         <p className="pt-8 uppercase font-medium">Care Instructions</p>
         <hr className="my-2 border-gray-300" />
         <p>Spot Clean Only</p>
         <p>Lay Flat to Dry</p>
       </div>
-      
-      <p className="text-lg tracking-wide">${product.price}</p>
-      <p className="text-center leading-loose">{product.description}</p>
 
+    <div>
     <div className="flex flex-col items-center space-y-4">
         <p className="text-sm tracking-wide">Choose Color:</p>
         <div className="flex space-x-4">
@@ -137,6 +139,7 @@ const ProductPage = () => {
         >
           Buy Now
         </Link>
+        </div>
       </div>
     </div>
   );
