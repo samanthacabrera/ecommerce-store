@@ -18,8 +18,8 @@ const products = [
     name: "Yoga Mat Carrier",
     price: 99.99,
     inventory: {
-      light: 0,
-      dark: 1,
+      light: 1,
+      dark: 0,
       multi: 0
     },
     image: "/carrier.avif",

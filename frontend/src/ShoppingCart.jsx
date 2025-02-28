@@ -2,11 +2,23 @@ import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
 
 const ShoppingCart = () => {
-  const { cart, updateQuantity, removeFromCart } = useCart();
+  const { cart, updateQuantity, removeFromCart, timeLeft } = useCart();
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes}:${secs.toString().padStart(2, "0")}`;
+  };
 
   return (
     <div className="max-w-2xl mx-auto min-h-screen space-y-12 p-12">
       <h1 className="text-4xl tracking-wide pt-24">Shopping Cart</h1>
+
+      {cart.length > 0 && (
+        <p className="text-sm tracking-wide">
+          Cart expires in: <strong>{formatTime(timeLeft)}</strong>
+        </p>
+      )}
 
       {cart.length === 0 ? (
         <p className="opacity-50 text-sm">Your cart is empty.</p>
