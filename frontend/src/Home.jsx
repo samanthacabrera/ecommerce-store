@@ -5,6 +5,7 @@ import Mission from "./Mission.jsx";
 import Process from "./Process.jsx";
 import Policies from "./Policies.jsx";
 import EtsyStore from "./EtsyStore.jsx";
+import Support from "./Support.jsx";
 
 const Home = () => {
     return (
@@ -28,8 +29,9 @@ const Home = () => {
             </div>
             <Mission />
             <Process />
-            <EtsyStore/>
-            <Policies/>
+            <EtsyStore />
+            <Support />
+            <Policies />
         </div>
     )
 }
