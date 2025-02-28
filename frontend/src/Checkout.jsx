@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "./CartContext";
+import handleCheckout from "./StripeCheckout";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -19,13 +20,11 @@ const Checkout = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (cart.length === 0) return alert("Your cart is empty.");
-    
-    alert("Order placed successfully! 🎉");
-    clearCart();
-    navigate("/confirmation");
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      if (cart.length === 0) return alert("Your cart is empty.");
+      console.log("Cart contents before checkout:", cart);
+      await handleCheckout(cart);
   };
 
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -41,7 +40,7 @@ const Checkout = () => {
         ) : (
           <ul className="space-y-4">
             {cart.map((item) => (
-              <li key={item.id} className="flex justify-between items-center">
+              <li key={`${item.id}-${item.color}`} className="flex justify-between items-center">
                 <div className="flex items-center space-x-4">
                   <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-md" />
                   <div>
@@ -124,12 +123,18 @@ const Checkout = () => {
           />
         </div>
 
-        <button
+        {/* <button
           type="submit"
           className="w-full bg-white text-[lightslategray] py-3 rounded-md text-lg hover:bg-transparent hover:border hover:text-white transition-all duration-300 ease-in-out"
         >
           Place Order
-        </button>
+        </button> */}
+        <button
+              type="submit"
+              className="w-full bg-white text-[lightslategray] py-3 rounded-md text-lg hover:bg-transparent hover:border hover:text-white transition-all duration-300 ease-in-out"
+          >
+              Checkout with Stripe
+          </button>
       </form>
     </div>
   );

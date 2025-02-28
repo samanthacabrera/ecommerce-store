@@ -25,34 +25,39 @@ const productRoutes = require("./routes/ProductRoutes");
 app.use("/api/products", productRoutes);
 
 // stripe checkout session route
-app.post("/create-checkout-session", async (req, res) => {
-    try {
-        const { cartItems } = req.body; // get cart items from frontend
+app.post("/api/create-checkout-session", async (req, res) => {
+    const { cart } = req.body;
 
+    if (!cart || cart.length === 0) {
+        console.error("Cart is empty or undefined");
+        return res.status(400).json({ error: "Cart is empty" });
+    }
+
+    try {
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ["card"],
-            mode: "payment",
-            line_items: cartItems.map((item) => ({
+            line_items: cart.map(item => ({
                 price_data: {
                     currency: "usd",
                     product_data: {
                         name: item.name,
-                        images: [item.image],
                     },
                     unit_amount: Math.round(item.price * 100),
                 },
                 quantity: item.quantity,
             })),
-            success_url: "http://localhost:5173/confirmation", // redirect after success
-            cancel_url: "http://localhost:5173/cart", // redirect if canceled
+            mode: "payment",
+            success_url: "http://localhost:5173/",
+            cancel_url: "http://localhost:5173/cart",
         });
 
-        res.json({ url: session.url }); // send Stripe session URL to frontend
+        res.json({ id: session.id });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Something went wrong" });
+        console.error("Stripe error:", error);
+        res.status(500).json({ error: error.message });
     }
 });
+
 
 // start the server
 const PORT = process.env.PORT || 5001;
