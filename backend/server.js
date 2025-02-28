@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 // test route
 app.get("/", (req, res) => res.send("Welcome to the backend!"));
 
-const productRoutes = require("/routes/productRoutes.js");
+const productRoutes = require("./routes/ProductRoutes");
 app.use("/api/products", productRoutes);
 
 // start the server

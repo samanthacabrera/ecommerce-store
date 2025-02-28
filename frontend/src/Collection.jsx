@@ -1,7 +1,23 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import products from "./products";
 
 const Collection = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("http://localhost:5001/api/products"); // Change this when deploying
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="px-6 py-20 max-w-5xl mx-auto space-y-20">
       <h1 className="text-6xl text-center italic my-24">Explore Our Collection</h1>
@@ -9,7 +25,7 @@ const Collection = () => {
       <div className="space-y-20">
         {products.map((product, index) => (
           <div 
-            key={product.id} 
+            key={product._id} 
             className={`flex flex-col md:flex-row items-center gap-12 ${
               index % 2 === 1 ? "md:flex-row-reverse" : ""
             }`}
@@ -29,7 +45,7 @@ const Collection = () => {
               <p className="text-lg opacity-60">${product.price.toFixed(2)}</p>
               <p className="text-sm opacity-70 leading-relaxed">{product.description}</p>
               <Link 
-                to={`/product/${product.id}`} 
+                to={`/product/${product._id}`} 
                 className="inline-block border p-2 text-sm"
               >
                 View Product
