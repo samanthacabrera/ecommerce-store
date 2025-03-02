@@ -6,6 +6,7 @@ import Process from "./Process.jsx";
 import Policies from "./Policies.jsx";
 import EtsyStore from "./EtsyStore.jsx";
 import Support from "./Support.jsx";
+import Contact from "./Contact.jsx";
 
 const Home = () => {
     return (
@@ -32,6 +33,7 @@ const Home = () => {
             <EtsyStore />
             <Support />
             <Policies />
+            <Contact />
         </div>
     )
 }
