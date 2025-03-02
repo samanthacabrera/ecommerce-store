@@ -24,6 +24,11 @@ app.get("/", (req, res) => res.send("Welcome to the backend!"));
 const productRoutes = require("./routes/ProductRoutes");
 app.use("/api/products", productRoutes);
 
+// send user messages to email
+const contactRoutes = require("./routes/contactRoutes");
+app.use("/api", contactRoutes);
+
+
 // stripe checkout session route
 app.post("/api/create-checkout-session", async (req, res) => {
     const { cart } = req.body;

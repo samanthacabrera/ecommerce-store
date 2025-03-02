@@ -63,7 +63,7 @@ function Contact() {
           value={formData.message}
           onChange={handleChange}
           placeholder="Message"
-          className="bg-slate-200 text-slate-900 border-b border-gray-400 focus:border-white px-2 py-2 transition-all duration-300 outline-none tracking-wider h-32 resize-none"
+          className="border-b border-gray-400 focus:border-white px-2 py-2 transition-all duration-300 outline-none tracking-wider h-32 resize-none"
           required
         />
         <button
