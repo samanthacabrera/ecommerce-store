@@ -35,18 +35,21 @@ function Contact() {
   };
 
   return (
-    <div className="text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <h2 className="text-4xl text-center italic mb-24">
         Get in Touch
       </h2>
-      <form onSubmit={handleSubmit} className="flex flex-col w-[40vw] gap-6">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col w-full max-w-2xl gap-8 p-16 bg-white shadow rounded-t-2xl rounded-b"
+      >
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
-          placeholder="Name"
-          className="bg-transparent border-b border-gray-400 focus:border-white px-2 py-2 transition-all duration-300 outline-none tracking-wider"
+          placeholder="Your Name"
+          className="bg-transparent border-b border-[#778899] focus:border-gray-600 text-gray-700 px-4 py-4 transition-all duration-300 outline-none tracking-wide text-lg"
           required
         />
         <input
@@ -54,25 +57,29 @@ function Contact() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Email"
-          className="bg-transparent border-b border-gray-400 focus:border-white px-2 py-2 transition-all duration-300 outline-none tracking-wider"
+          placeholder="Your Email"
+          className="bg-transparent border-b border-[#778899] focus:border-gray-600 text-gray-700 px-4 py-4 transition-all duration-300 outline-none tracking-wide text-lg"
           required
         />
         <textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Message"
-          className="border-b border-gray-400 focus:border-white px-2 py-2 transition-all duration-300 outline-none tracking-wider h-32 resize-none"
+          placeholder="Your Message"
+          className="bg-transparent border-b border-[#778899] focus:border-gray-600 text-gray-700 px-4 py-4 transition-all duration-300 outline-none tracking-wide text-lg h-36 resize-none"
           required
         />
         <button
           type="submit"
-          className="w-full border p-1 hover:scale-105 transition"
+          className="text-gray-400"
         >
-          Send
+          Send Message
         </button>
-        {status && <p className="text-sm my-2">{status}</p>}
+        {status && (
+          <p className="text-xs text-center text-gray-400">
+            {status}
+          </p>
+        )}
       </form>
     </div>
   );

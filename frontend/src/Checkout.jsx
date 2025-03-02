@@ -123,12 +123,6 @@ const Checkout = () => {
           />
         </div>
 
-        {/* <button
-          type="submit"
-          className="w-full bg-white text-[lightslategray] py-3 rounded-md text-lg hover:bg-transparent hover:border hover:text-white transition-all duration-300 ease-in-out"
-        >
-          Place Order
-        </button> */}
         <button
               type="submit"
               className="w-full bg-white text-[lightslategray] py-3 rounded-md text-lg hover:bg-transparent hover:border hover:text-white transition-all duration-300 ease-in-out"
