@@ -41,7 +41,7 @@ function Contact() {
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-full max-w-2xl gap-8 p-16 bg-white shadow rounded-t-2xl rounded-b"
+        className="flex flex-col w-full max-w-2xl gap-8 p-16 bg-white shadow rounded-t-2xl"
       >
         <input
           type="text"
