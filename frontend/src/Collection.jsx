@@ -9,8 +9,7 @@ useEffect(() => {
   const fetchProducts = async () => {
     try {
       const response = await fetch(`${API_BASE_URL}/products`); 
-      // console.log("Response status:", response.status);
-      const data = JSON.parse(text); 
+      const data = await response.json(); 
       setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -21,6 +20,7 @@ useEffect(() => {
 }, []);
 
 
+
   return (
     <div className="px-6 py-20 max-w-5xl mx-auto space-y-20">
       <h1 className="text-6xl text-center italic my-24">Explore Our Collection</h1>
@@ -28,7 +28,7 @@ useEffect(() => {
       <div className="space-y-20">
         {products.map((product, index) => (
           <div 
-            key={product._id} 
+            key={product._id}
             className={`flex flex-col md:flex-row items-center gap-12 ${
               index % 2 === 1 ? "md:flex-row-reverse" : ""
             }`}
