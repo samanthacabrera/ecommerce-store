@@ -90,7 +90,7 @@ const ProductPage = () => {
         alt={product.name}
         className="h-80 w-auto object-cover rounded-lg shadow-md"
       />
-       <p className="text-justify tracking-wide lg:w-full lg:pl-24 self-center leading-loose">{product.description}</p>
+       <p className="text-justify tracking-tight lg:w-full lg:pl-24 self-center leading-loose">{product.description}</p>
       </div>
 
     
