@@ -21,7 +21,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 app.get("/", (req, res) => res.send("Welcome to the backend!"));
 
 // fetch all products route
-const productRoutes = require("./routes/ProductRoutes");
+const productRoutes = require("./routes/productRoutes");
 app.use("/api/products", productRoutes);
 
 // send user messages to email
