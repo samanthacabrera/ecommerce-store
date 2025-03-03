@@ -11,11 +11,12 @@ import Contact from "./Contact.jsx";
 
 const Home = () => {
     const [products, setProducts] = useState([]);
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch("/api/products");
+                const response = await fetch(`${API_BASE_URL}/products`);
                 const data = await response.json();
                 setProducts(data);
             } catch (error) {

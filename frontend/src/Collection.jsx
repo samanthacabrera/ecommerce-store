@@ -3,20 +3,23 @@ import { Link } from "react-router-dom";
 
 const Collection = () => {
   const [products, setProducts] = useState([]);
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch("http://localhost:5001/api/products"); // Change this when deploying
-        const data = await response.json();
-        setProducts(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
+useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/products`); 
+      // console.log("Response status:", response.status);
+      const data = JSON.parse(text); 
+      setProducts(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
 
-    fetchProducts();
-  }, []);
+  fetchProducts();
+}, []);
+
 
   return (
     <div className="px-6 py-20 max-w-5xl mx-auto space-y-20">

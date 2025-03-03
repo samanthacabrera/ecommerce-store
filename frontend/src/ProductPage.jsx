@@ -4,8 +4,8 @@ import { useCart } from "./CartContext";
 
 const ProductPage = () => {
   const { id } = useParams();
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
   const { addToCart, cart } = useCart();
-
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/api/products/${id}`);
+        const response = await fetch(`${API_BASE_URL}/products/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch product");
         }
