@@ -2,44 +2,55 @@ import { Link } from "react-router-dom";
 
 const Support = () => {
   return (
-    <div className="max-w-2xl mx-auto p-12 space-y-6">
+    <div className="max-w-2xl mx-auto p-12 space-y-12">
       <h2 className="text-4xl text-center italic mb-24">Ways to Suport</h2>
       <p>
-        Not ready to make a purchase? No problem! There are plenty of ways to support our mission and help spread the word.
+        Not ready to make a purchase? No problem! There are plenty of ways to support our mission and get involved.
       </p>
 
-      <div className="space-y-8">
+      <div className="space-y-12">
         <div>
           <h3 className="text-xl">Spread the Word</h3>
           <p>
-            Share our shop with your friends, family, and fellow yoga lovers! Word of mouth is powerful.
+            Tell your friends, family, and fellow yoga enthusiasts about our shop! A simple recommendation or mention can go a long way in helping us grow and continue our mission. 
           </p>
         </div>
 
         <div>
-          <h3 className="text-xl"> Leave a Review</h3>
+          <h3 className="text-xl">Leave a Review</h3>
           <p>
             If you've purchased from us before, leaving a review on Etsy helps others feel confident about supporting us!
           </p>
         </div>
-        
+
         <div>
           <h3 className="text-xl">Shop Secondhand</h3>
           <p>
-            Buying secondhand helps reduce textile waste. Next time you need a new yoga top, check out your local thrift store first!
+            Next time you're looking for a new yoga top or gear, check out your local thrift store, online resale platforms, or community swap groups.
           </p>
         </div>
         
         <div>
-            <h3 className="text-xl">Directly Donate</h3>
-            <p>If you’re in the Denver area, you can support us by donating clean, gently used t-shirts that we can upcycle into new pieces.</p>
-            <Link to="/" className="border p-1 text-xs">Learn More</Link>
+            <h3 className="text-xl">Donate Materials</h3>
+            <p>
+            If you’re in the Denver area, you can support us by donating clean, gently used t-shirts that we can upcycle into new pieces.
+            Reach out via our contact form below, and we’ll set up a way to receive your donation.
+            </p>
         </div>
         
         <div>
-            <h3 className="text-xl">Donate via PayPal</h3>
-            <p>If you’d like to support our work directly, you can make a contribution to help keep this project running.</p>
-            <a href="https://paypal.com" target="_blank" className="border p-1 text-xs">Donate Now</a>
+            <h3 className="text-xl">Contribute Financially</h3>
+            <p className="pb-2">
+              If you’d like to support our work directly, you can make a contribution to help keep this project running.
+            </p>
+              <a 
+                href="https://buymeacoffee.com/samcab" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border p-1 text-xs"
+              >
+                Buy Me a Coffee
+              </a>
         </div>
       </div>
     </div>

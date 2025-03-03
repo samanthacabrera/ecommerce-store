@@ -14,25 +14,19 @@ const Policies = () => {
             <div>
             <h3 >Payment Methods</h3>
                 <p>
-                    Yarn<span className="italic">sara</span> accepts all major credit/debit cards, PayPal, and Apple Pay. Payments are securely processed to ensure a safe transaction.
+                    Yarn<span className="italic">sara</span> accepts all major credit/debit cards, PayPal, and Apple Pay. All payments are securely processed through Stripe to ensure a safe and seamless transaction.
                 </p>
             </div>
             <div>
                 <h3>Returns & Exchanges</h3>
                 <p>
-                    Due to the handmade and upcycled nature of the products, all sales are final. However, if there is an issue with your order, please contact me within 7 days of delivery, and I’ll work with you to find a solution.
+                    All sales are final. If there’s an issue with your order, please reach out within 7 days of delivery. While I don’t offer returns, I’m happy to arrange an exchange if your item is unused and in its original condition.
                 </p>
             </div>
             <div>
                 <h3>Cancellations</h3>
                 <p>
                     Orders can be canceled within 24 hours of placement. After that, work on your order may have already begun, and cancellations will not be accepted.
-                </p>
-            </div>
-            <div>
-                <h3>Sustainability Commitment</h3>
-                <p>
-                    Yarn<span className="italic">sara</span> is committed to reducing waste. Packaging is minimal and plastic-free.  
                 </p>
             </div>
             <div>

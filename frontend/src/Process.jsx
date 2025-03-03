@@ -31,7 +31,7 @@ const Process = () => {
                             <strong>100% Cotton:</strong> Best for a strong, structured hold. Its firm, non-stretch weave provides a secure grip, ensuring the strap stays in place during transport.
                         </li>
                         <li>
-                            <strong>Jersey Knit Fabric:</strong> Best for a soft, flexible feel. Its slight stretch and smooth texture make it easy to wrap around your mat, offering an adaptable fit.
+                            <strong>Cotton-Polyester Blends:</strong> Best for a soft, flexible feel. Its slight stretch and smooth texture make it easy to wrap around your mat, offering an adaptable fit.
                         </li>
                     </ul>
                 </div>

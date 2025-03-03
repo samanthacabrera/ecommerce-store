@@ -6,12 +6,10 @@ const router = express.Router();
 // get all 
 router.get("/", async (req, res) => {
     try {
-        console.log("Fetching products...");
         const products = await Product.find();
-        console.log("Products fetched:", products);
+        // console.log("Products fetched:", products);
         res.json(products);
     } catch (error) {
-        console.error("Error fetching products:", error);
         res.status(500).json({ message: "Server error", error: error.message });
     }
 });

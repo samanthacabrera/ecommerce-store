@@ -8,7 +8,9 @@ import ProductPage from "./ProductPage";
 import ShoppingCart from "./ShoppingCart";
 import Checkout from "./Checkout";
 import Confirmation from "./Confirmation";
+import PrivacyPolicy from "./Privacy";
 import Footer from "./Footer";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
           <Route path="/cart" element={<ShoppingCart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/privacy" element={<PrivacyPolicy/>} />
         </Routes>
         <Footer />
       </div>

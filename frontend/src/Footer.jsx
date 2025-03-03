@@ -11,10 +11,9 @@ const Footer = () => {
         </div>
         
         <nav className="flex space-x-6">
-          <Link to="/" className="hover:opacity-70 transition-opacity">Donate</Link>
-          <Link to="/" className="hover:opacity-70 transition-opacity">Feedback</Link>
           <Link to="/" className="hover:opacity-70 transition-opacity">Terms</Link>
-          <Link to="/" className="hover:opacity-70 transition-opacity">Privacy</Link>
+          <Link to="/privacy" className="hover:opacity-70 transition-opacity">Privacy</Link>
+          <Link to="/" className="hover:opacity-70 transition-opacity">Donate</Link>
         </nav>
 
         <div className="text-center md:text-right">

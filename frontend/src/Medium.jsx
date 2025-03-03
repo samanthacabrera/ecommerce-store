@@ -27,7 +27,7 @@ function Medium() {
   return (
     <div className="max-w-2xl mx-auto p-12">
         <h2 className="text-4xl text-center italic mb-24">
-            Latest Yoga Articles
+            Our Monthly Column
         </h2>
       {articles.length > 0 ? (
         <div className="flex flex-col space-y-12">
