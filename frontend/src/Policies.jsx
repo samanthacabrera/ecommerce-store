@@ -1,6 +1,6 @@
 const Policies = () => {
     return (
-        <div className="max-w-2xl mx-auto p-12 space-y-12">
+        <div className="max-w-2xl mx-auto pt-24 p-12 space-y-12">
             <h2 className="text-4xl text-center italic mb-24">Shop Policies</h2>
             <p>
                 Transparency and sustainability are at the core of Yarn<span className="italic">sara</span>. Please read through the shop policies before placing an order to ensure a smooth experience.
