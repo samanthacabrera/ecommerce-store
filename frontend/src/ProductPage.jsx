@@ -112,64 +112,66 @@ const ProductPage = () => {
         <p>Lay Flat to Dry</p>
       </div>
 
-  <div className="grid gap-12">
-    <p className="text-sm tracking-wide ">Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. <br/> Expect slight variations in color and texture.</p>
-    <p className="text-sm tracking-wide text-center">Select Color Theme:</p>
-    <div className="flex justify-center gap-3">
-      {Object.keys(product.inventory).map((color) => (
-        <div key={color} className="flex flex-col items-center space-y-4">
-          <button
-            onClick={() => setSelectedColor(color)}
-            disabled={product.inventory[color] === 0}
-            className={`h-12 w-12 rounded-full border transition duration-200 ${
-              selectedColor === color ? "scale-110 " : "border-gray-300"
-            } ${
-              product.inventory[color] === 0 ? "opacity-50 cursor-not-allowed" : "hover:scale-110"
-            } ${getColorClass(color)}`}
-            aria-label={`Select ${color}`}
-          />
-          <span className={`text-xs tracking-wide capitalize ${
-            selectedColor === color ? "font-medium border-b" : ""
-          }`}>
-            {color.replace("-", " ")}
-          </span>
-        </div>
-      ))}
-  </div>
+      <div className="grid gap-12">
+        <p className="text-sm tracking-wide ">Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. <br/> Expect slight variations in color and texture.</p>
+        <p className="text-sm tracking-wide text-center">Select Color Theme:</p>
+        <div className="flex justify-center gap-3">
+          {Object.keys(product.inventory).map((color) => (
+            <div key={color} className="flex flex-col items-center space-y-4">
+              <button
+                onClick={() => setSelectedColor(color)}
+                disabled={product.inventory[color] === 0}
+                className={`h-12 w-12 rounded-full border transition duration-200 ${
+                  selectedColor === color ? "scale-110 " : "border-gray-300"
+                } ${
+                  product.inventory[color] === 0 ? "opacity-50 cursor-not-allowed" : "hover:scale-110"
+                } ${getColorClass(color)}`}
+                aria-label={`Select ${color}`}
+              />
+              <span className={`text-xs tracking-wide capitalize ${
+                selectedColor === color ? "font-medium border-b" : ""
+              }`}>
+                {color.replace("-", " ")}
+              </span>
+            </div>
+          ))}
+      </div>
 
-  <div className="flex justify-around text-sm tracking-wide">
-    <p>{availableStock > 0 ? `In Stock: ${availableStock}` : "Out of Stock"}</p>
-    <p>{inCartCount > 0 ? `In Cart: ${inCartCount}` : "Not in Cart"}</p>
-  </div>
+      <div className="flex justify-around text-sm tracking-wide">
+        <p>{availableStock > 0 ? `In Stock: ${availableStock}` : "Out of Stock"}</p>
+        <p>{inCartCount > 0 ? `In Cart: ${inCartCount}` : "Not in Cart"}</p>
+      </div>
 
-  <div className="grid grid-cols-2 gap-4">
-    <button
-      disabled={availableStock === 0 || inCartCount >= availableStock || addingToCart}
-      onClick={handleAddToCart}
-      className={`border rounded-full px-6 py-3 text-sm tracking-wide transition-all duration-200 flex items-center justify-center space-x-2 ${
-        availableStock === 0 || inCartCount >= availableStock
-          ? "opacity-50 cursor-not-allowed border-gray-300"
-          : "hover:scale-[1.02] "
-      }`}
-    >
-      {addingToCart ? (
-        <>
-          <span className="animate-spin h-4 w-4 border-2 border-t-transparent rounded-full"></span>
-          <span>Adding...</span>
-        </>
-      ) : (
-        "Add to Cart"
-      )}
-    </button>
+      <div className="grid grid-cols-2 gap-4">
+        <button
+          disabled={availableStock === 0 || inCartCount >= availableStock || addingToCart}
+          onClick={handleAddToCart}
+          className={`border rounded-full px-6 py-3 text-sm tracking-wide transition-all duration-200 flex items-center justify-center space-x-2 ${
+            availableStock === 0 || inCartCount >= availableStock
+              ? "opacity-50 cursor-not-allowed border-gray-300"
+              : "hover:scale-[1.02] "
+          }`}
+        >
+        {addingToCart ? (
+          <>
+            <span className="animate-spin h-4 w-4 border-2 border-t-transparent rounded-full"></span>
+            <span>Adding...</span>
+          </>
+        ) : (
+          "Add to Cart"
+        )}
+        </button>
 
-    <Link
-      to="/cart"
-      className="border rounded-full px-6 py-3 text-sm tracking-wide text-center transition-all duration-200 hover:scale-[1.02] flex items-center justify-center"
-    >
-      Buy Now
-    </Link>
-  </div>
+        <Link
+          to="/cart"
+          className="border rounded-full px-6 py-3 text-sm tracking-wide text-center transition-all duration-200 hover:scale-[1.02] flex items-center justify-center"
+        >
+          Buy Now
+        </Link>
+      </div>
 
+      <p className="text-center text-sm tracking-wide mt-12">New drops every Sunday at 8:00 MST.</p>
+        
       </div>
     </div>
   );
