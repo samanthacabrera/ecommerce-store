@@ -26,7 +26,9 @@ function App() {
         const response = await fetch(`${API_BASE_URL}/products`);
         const data = await response.json();
         setProducts(data);
-        setIsLoading(false);
+         setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
       } catch (error) {
         console.error("Error fetching products:", error);
         setIsLoading(false);
