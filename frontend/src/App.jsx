@@ -14,12 +14,26 @@ import Policies from "./Policies";
 import PrivacyPolicy from "./Privacy";
 import Footer from "./Footer";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 4000); 
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/products`);
+        const data = await response.json();
+        setProducts(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        setIsLoading(false);
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   return (
@@ -31,8 +45,8 @@ function App() {
           <ScrollToTop />
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/collection" element={<Collection />} />
+            <Route path="/" element={<Home products={products} />} />
+            <Route path="/collection" element={<Collection products={products} />} />
             <Route path="/product/:id" element={<ProductPage />} />
             <Route path="/cart" element={<ShoppingCart />} />
             <Route path="/checkout" element={<Checkout />} />
