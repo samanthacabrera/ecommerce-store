@@ -18,7 +18,7 @@ const Home = () => {
             try {
                 const response = await fetch(`${API_BASE_URL}/products`);
                 const data = await response.json();
-                setProducts(data);
+                setProducts(data.reverse());
             } catch (error) {
                 console.error("Error fetching products:", error);
             }
@@ -28,7 +28,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center space-y-80 p-12">
+        <div className="flex flex-col items-center space-y-80 p-2 lg:p-12">
             <Hero/>
             <div>
                 <h3 className="text-4xl text-center italic mb-24">Our Collection</h3>

@@ -10,7 +10,7 @@ useEffect(() => {
     try {
       const response = await fetch(`${API_BASE_URL}/products`); 
       const data = await response.json(); 
-      setProducts(data);
+      setProducts(data.reverse());
     } catch (error) {
       console.error("Error fetching products:", error);
     }
