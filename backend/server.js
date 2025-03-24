@@ -10,7 +10,7 @@ app.use(express.json()); // allows app to read JSON data
 app.use(cors({ origin: "*", credentials: true })); // lets frontend talk to backend
 
 // connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
 
@@ -27,7 +27,6 @@ app.use("/api/products", productRoutes);
 // send user messages to email
 const contactRoutes = require("./routes/contactRoutes");
 app.use("/api", contactRoutes);
-
 
 // stripe checkout session route
 app.post("/api/create-checkout-session", async (req, res) => {
