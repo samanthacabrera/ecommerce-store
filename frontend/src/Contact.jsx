@@ -37,21 +37,19 @@ function Contact() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-4xl text-center italic mb-24">
-        Get in Touch
-      </h2>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col w-full max-w-2xl gap-8 p-16 bg-white shadow rounded-t-2xl"
+    <div className="flex items-center justify-center p-24 text-[lightslategray] bg-white/90 rounded-sm">
+      <form 
+        onSubmit={handleSubmit} 
+        className="space-y-6 text-center"
       >
+        <h1 className="text-2xl md:text-4xl my-6">Contact Us</h1>
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
-          placeholder="Your Name"
-          className="bg-transparent border-b border-[#778899] focus:border-gray-600 text-gray-700 px-4 py-4 transition-all duration-300 outline-none tracking-wide text-lg"
+          placeholder="name"
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
           required
         />
         <input
@@ -59,26 +57,27 @@ function Contact() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Your Email"
-          className="bg-transparent border-b border-[#778899] focus:border-gray-600 text-gray-700 px-4 py-4 transition-all duration-300 outline-none tracking-wide text-lg"
+          placeholder="email"
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
           required
         />
         <textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Your Message"
-          className="bg-transparent border-b border-[#778899] focus:border-gray-600 text-gray-700 px-4 py-4 transition-all duration-300 outline-none tracking-wide text-lg h-36 resize-none"
+          placeholder="message"
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none resize-none"
+          rows="4"
           required
         />
-        <button
-          type="submit"
-          className="text-gray-400"
+        <button 
+          type="submit" 
+          className="w-fit px-4 py-1 rounded-sm bg-[lightslategray] text-white/90 border border-opacity-0 hover:text-[lightslategray] hover:bg-transparent hover:border-opacity-100 hover:border-[lightslategray] transition-all duration-300"
         >
-          Send Message
+          send
         </button>
         {status && (
-          <p className="text-xs text-center text-gray-400">
+          <p className="text-neutral-400 text-xs tracking-widest">
             {status}
           </p>
         )}

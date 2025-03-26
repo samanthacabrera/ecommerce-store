@@ -37,12 +37,12 @@ function Medium() {
               href={article.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-6 bg-white bg-opacity-90 text-[lightslategray] hover:scale-105 transition duration-500 ease-in-out"
+              className="block p-6 bg-white bg-opacity-90 text-[lightslategray] hover:scale-[102%] transition duration-500 ease-in-out"
             >
               <h3 className="text-lg tracking-wide">
                 {article.title}
               </h3>
-              <p className="text-sm opacity-60">
+              <p className="text-sm opacity-80">
                 {new Date(article.pubDate).toDateString()}
               </p>
             </a>
