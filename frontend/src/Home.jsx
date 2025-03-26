@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Hero from "./Hero.jsx";
 import Mission from "./Mission.jsx";
-import Process from "./Process.jsx";
 import EtsyStore from "./EtsyStore.jsx";
 import Support from "./Support.jsx";
 import Medium from "./Medium.jsx";
-import Policies from "./Policies.jsx";
 import Contact from "./Contact.jsx";
 
 const Home = () => {
@@ -51,11 +49,9 @@ const Home = () => {
                 )}
             </div>
             <Mission />
-            <Process />
             <EtsyStore />
             <Support />
             <Medium />
-            <Policies />
             <Contact />
         </div>
     );
