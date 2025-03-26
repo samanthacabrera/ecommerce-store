@@ -22,7 +22,7 @@ function App() {
     const fetchProducts = async () => {
         try {
             const apiUrl = `${API_BASE_URL}/api/products`;
-            console.log('Attempting to fetch from:', apiUrl);
+            // console.log('Attempting to fetch from:', apiUrl);
             
             const response = await fetch(apiUrl, {
                 method: 'GET',

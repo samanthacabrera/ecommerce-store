@@ -33,16 +33,16 @@ const ProductPage = () => {
     return <h2 className="text-center text-xl mt-20">Product not found</h2>;
   }
 
-  console.log("Product data:", product);
-  console.log("Cart items:", cart);
+  // console.log("Product data:", product);
+  // console.log("Cart items:", cart);
 
   const cartItem = cart.find((item) => item._id === product._id);
   const inCartCount = cartItem ? cartItem.quantity : 0;
   const availableStock = product.inventory - inCartCount;
 
-  console.log("Cart item for this product:", cartItem);
-  console.log("Available stock:", availableStock);
-  console.log("In cart count:", inCartCount);
+  // console.log("Cart item for this product:", cartItem);
+  // console.log("Available stock:", availableStock);
+  // console.log("In cart count:", inCartCount);
 
   const handleAddToCart = () => {
     if (inCartCount >= product.inventory) {
