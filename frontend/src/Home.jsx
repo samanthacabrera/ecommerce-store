@@ -9,7 +9,7 @@ import Contact from "./Contact.jsx";
 
 const Home = ({products}) => {
     return (
-        <div className="flex flex-col items-center space-y-80 p-2 lg:p-12">
+        <div className="flex flex-col min-h-screen w-screen items-center space-y-80 p-2 lg:p-12">
             <Hero/>
             <div>
                 <h2 className="text-4xl text-center italic mb-24">Our Collection</h2>
