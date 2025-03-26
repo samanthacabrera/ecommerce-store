@@ -22,8 +22,8 @@ const products = [
     {
         name: "Upcycled T-Shirt Yarn",
         price: 49.99,
-        inventory: 1,
-        image: "3",
+        inventory: 3,
+        image: "/tarn.webp",
         description: "Our t-shirt yarn made from 100% upcycled cotton, perfect for your next sustainable craft project."
     }
 ];
