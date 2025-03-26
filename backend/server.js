@@ -7,7 +7,7 @@ require("dotenv").config();
 // set up middleware
 const app = express();
 app.use(express.json()); // allows app to read JSON data
-app.use(cors({ origin: "*", credentials: true })); // lets frontend talk to backend
+app.use(cors());// lets frontend talk to backend
 
 // connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)

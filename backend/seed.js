@@ -6,7 +6,7 @@ const Product = require("./models/Product");
 dotenv.config();
 
 // connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
 
@@ -18,6 +18,13 @@ const products = [
         inventory: 1,
         image: "/strap.webp",
         description: "Our hand-crocheted yoga mat strap made entirely from upcycled 100% cotton textiles."
+    },
+    {
+        name: "Upcycled T-Shirt Yarn",
+        price: 49.99,
+        inventory: 1,
+        image: "3",
+        description: "Our t-shirt yarn made from 100% upcycled cotton, perfect for your next sustainable craft project."
     }
 ];
 

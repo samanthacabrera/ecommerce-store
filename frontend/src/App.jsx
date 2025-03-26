@@ -20,17 +20,36 @@ function App() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      try {
-        const response = await fetch(`${API_BASE_URL}/products`);
-        const data = await response.json();
-        setProducts(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
+        try {
+            const apiUrl = `${API_BASE_URL}/api/products`;
+            console.log('Attempting to fetch from:', apiUrl);
+            
+            const response = await fetch(apiUrl, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+            }
+            
+            const data = await response.json();
+            console.log('Products fetched successfully:', data);
+            setProducts(data);
+        } catch (error) {
+            console.error('Detailed fetch error:', {
+                message: error.message,
+                name: error.name,
+                stack: error.stack
+            });
+        }
     };
 
     fetchProducts();
-  }, []);
+}, []);
 
   return (
     <CartProvider>
