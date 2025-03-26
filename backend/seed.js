@@ -15,20 +15,9 @@ const products = [
     {
         name: "Yoga Mat Strap",
         price: 79.99,
-        inventory: { light: 2, dark: 1, multi: 1 },
+        inventory: 1,
         image: "/strap.webp",
-        material: "100% Cotton",
-        saved: 4,
         description: "Our hand-crocheted yoga mat strap made entirely from upcycled 100% cotton textiles."
-    },
-    {
-        name: "Yoga Mat Carrier",
-        price: 99.99,
-        inventory: { light: 1, dark: 0, multi: 0 },
-        image: "/carrier.avif",
-        material: "60% Cotton, 40% Polyester",
-        saved: 9,
-        description: "Our hand-crocheted yoga mat carrier is made from 100% upcycled cotton-polyester blends."
     }
 ];
 

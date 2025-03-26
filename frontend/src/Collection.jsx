@@ -1,26 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Collection = () => {
-  const [products, setProducts] = useState([]);
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
-
-useEffect(() => {
-  const fetchProducts = async () => {
-    try {
-      const response = await fetch(`${API_BASE_URL}/products`); 
-      const data = await response.json(); 
-      setProducts(data.reverse());
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    }
-  };
-
-  fetchProducts();
-}, []);
-
-
-
+const Collection = ({products}) => {
   return (
     <div className="px-6 py-20 max-w-5xl mx-auto space-y-20">
       <h1 className="text-6xl text-center italic my-24">Explore Our Collection</h1>

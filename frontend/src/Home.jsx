@@ -7,24 +7,7 @@ import Support from "./Support.jsx";
 import Medium from "./Medium.jsx";
 import Contact from "./Contact.jsx";
 
-const Home = () => {
-    const [products, setProducts] = useState([]);
-    const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const response = await fetch(`${API_BASE_URL}/products`);
-                const data = await response.json();
-                setProducts(data.reverse());
-            } catch (error) {
-                console.error("Error fetching products:", error);
-            }
-        };
-
-        fetchProducts();
-    }, []);
-
+const Home = ({products}) => {
     return (
         <div className="flex flex-col items-center space-y-80 p-2 lg:p-12">
             <Hero/>
@@ -49,8 +32,8 @@ const Home = () => {
                 )}
             </div>
             <Mission />
-            <EtsyStore />
             <Support />
+            <EtsyStore />
             <Medium />
             <Contact />
         </div>

@@ -22,13 +22,6 @@ const Support = () => {
             If you've purchased from us before, leaving a review on Etsy helps others feel confident about supporting us!
           </p>
         </div>
-
-        <div>
-          <h3 className="text-xl">Shop Secondhand</h3>
-          <p>
-            Next time you're looking for a new yoga top or gear, check out your local thrift store, online resale platforms, or community swap groups.
-          </p>
-        </div>
         
         <div>
             <h3 className="text-xl">Donate Materials</h3>
@@ -37,20 +30,12 @@ const Support = () => {
             Reach out via our contact form below, and we’ll set up a way to receive your donation.
             </p>
         </div>
-        
+  
         <div>
-            <h3 className="text-xl">Contribute Financially</h3>
-            <p className="pb-2">
-              If you’d like to support our work directly, you can make a contribution to help keep this project running.
-            </p>
-              <a 
-                href="https://buymeacoffee.com/samcab" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="border p-1 text-xs"
-              >
-                Buy Me a Coffee
-              </a>
+          <h3 className="text-xl">Shop Secondhand</h3>
+          <p>
+            Next time you're looking for a new yoga set or gear, check out your local thrift store, online resale platforms, or community swap groups.
+          </p>
         </div>
       </div>
     </div>
