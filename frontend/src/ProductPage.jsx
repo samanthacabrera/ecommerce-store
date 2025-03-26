@@ -7,71 +7,57 @@ const ProductPage = () => {
   const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
   const { addToCart, cart } = useCart();
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [selectedColor, setSelectedColor] = useState(null);
   const [addingToCart, setAddingToCart] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/products/${id}`);
+        console.log(`Fetching product with ID: ${id}`);
+        const response = await fetch(`${API_BASE_URL}/api/products/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch product");
         }
         const data = await response.json();
+        console.log("Product data fetched:", data);
         setProduct(data);
-        if (Object.keys(data.inventory).length > 0) {
-          setSelectedColor(Object.keys(data.inventory)[0]);
-        }
       } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+        console.log("Error fetching product:", err);
       }
     };
 
     fetchProduct();
   }, [id]);
 
-  if (loading) {
-    return <h2 className="text-center text-xl mt-20">Loading...</h2>;
-  }
-
-  if (error) {
-    return <h2 className="text-center text-xl mt-20 text-red-500">{error}</h2>;
-  }
-
   if (!product) {
     return <h2 className="text-center text-xl mt-20">Product not found</h2>;
   }
 
-  const cartItem = cart.find(
-    (item) => item.id === product.id && item.color === selectedColor
-  );
+  console.log("Product data:", product);
+  console.log("Cart items:", cart);
+
+  const cartItem = cart.find((item) => item._id === product._id);
   const inCartCount = cartItem ? cartItem.quantity : 0;
-  const availableStock = selectedColor ? product.inventory[selectedColor] || 0 : 0;
+  const availableStock = product.inventory - inCartCount;
+
+  console.log("Cart item for this product:", cartItem);
+  console.log("Available stock:", availableStock);
+  console.log("In cart count:", inCartCount);
 
   const handleAddToCart = () => {
+    if (inCartCount >= product.inventory) {
+      console.log("Cannot add more, stock limit reached");
+      return;
+    }
+
+    console.log("Adding product to cart:", product);
     setAddingToCart(true);
+
     setTimeout(() => {
-      addToCart(product, selectedColor);
+      addToCart({ ...product });
       setAddingToCart(false);
     }, 500);
   };
 
-  const getColorClass = (color) => {
-    switch (color) {
-      case "light":
-        return "bg-white border border-gray-400";
-      case "dark":
-        return "bg-black";
-      case "multi":
-        return "bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500";
-      default:
-        return "";
-    }
-  };
 
   return (
     <div className="flex flex-col items-center space-y-40 p-12 max-w-3xl mx-auto">
@@ -90,7 +76,7 @@ const ProductPage = () => {
         alt={product.name}
         className="h-80 w-auto object-cover rounded-lg shadow-md"
       />
-       <p className="text-justify tracking-tight lg:w-full lg:pl-24 self-center leading-loose">{product.description}</p>
+       <p className="text-justify tracking-tight lg:w-full lg:pl-24 self-center leading-loose">{product.description} Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. <br/> Expect slight variations in color and texture.</p>
       </div>
 
     
@@ -113,29 +99,6 @@ const ProductPage = () => {
       </div>
 
       <div className="grid gap-12">
-        <p className="text-sm tracking-wide ">Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. <br/> Expect slight variations in color and texture.</p>
-        <p className="text-sm tracking-wide text-center">Select Color Theme:</p>
-        <div className="flex justify-center gap-3">
-          {Object.keys(product.inventory).map((color) => (
-            <div key={color} className="flex flex-col items-center space-y-4">
-              <button
-                onClick={() => setSelectedColor(color)}
-                disabled={product.inventory[color] === 0}
-                className={`h-12 w-12 rounded-full border transition duration-200 ${
-                  selectedColor === color ? "scale-110 " : "border-gray-300"
-                } ${
-                  product.inventory[color] === 0 ? "opacity-50 cursor-not-allowed" : "hover:scale-110"
-                } ${getColorClass(color)}`}
-                aria-label={`Select ${color}`}
-              />
-              <span className={`text-xs tracking-wide capitalize ${
-                selectedColor === color ? "font-medium border-b" : ""
-              }`}>
-                {color.replace("-", " ")}
-              </span>
-            </div>
-          ))}
-      </div>
 
       <div className="flex justify-around text-sm tracking-wide">
         <p>{availableStock > 0 ? `In Stock: ${availableStock}` : "Out of Stock"}</p>
@@ -144,22 +107,22 @@ const ProductPage = () => {
 
       <div className="grid grid-cols-2 gap-4">
         <button
-          disabled={availableStock === 0 || inCartCount >= availableStock || addingToCart}
+          disabled={addingToCart || availableStock <= 0}
           onClick={handleAddToCart}
           className={`border rounded-full px-6 py-3 text-sm tracking-wide transition-all duration-200 flex items-center justify-center space-x-2 ${
-            availableStock === 0 || inCartCount >= availableStock
+            availableStock <= 0
               ? "opacity-50 cursor-not-allowed border-gray-300"
-              : "hover:scale-[1.02] "
+              : "hover:scale-[1.02]"
           }`}
         >
-        {addingToCart ? (
-          <>
-            <span className="animate-spin h-4 w-4 border-2 border-t-transparent rounded-full"></span>
-            <span>Adding...</span>
-          </>
-        ) : (
-          "Add to Cart"
-        )}
+          {addingToCart ? (
+            <>
+              <span className="animate-spin h-4 w-4 border-2 border-t-transparent rounded-full"></span>
+              <span>Adding...</span>
+            </>
+          ) : (
+            "Add to Cart"
+          )}
         </button>
 
         <Link
