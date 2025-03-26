@@ -9,6 +9,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [addingToCart, setAddingToCart] = useState(false);
 
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
