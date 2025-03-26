@@ -1,8 +1,10 @@
 const Hero = () => {
     return (
         <div className="flex flex-col justify-center items-center w-screen h-screen">
-            <h1 className="text-4xl tracking-widest">yarn<span className="italic">sara</span></h1>
-            <p className="tracking-wide py-4">100% upcycled & handcrafted yoga accessories.</p>   
+            <div className="bg-white/10 p-20 rounded-sm shadow-sm">
+                <h1 className="text-4xl tracking-widest">yarn<span className="italic">sara</span></h1>
+                <p className="tracking-wider py-4">100% upcycled & handcrafted yoga accessories.</p>   
+            </div>
         </div>
     )
 }

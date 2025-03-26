@@ -61,7 +61,7 @@ const ProductPage = () => {
 
 
   return (
-    <div className="flex flex-col items-center space-y-40 p-12 max-w-3xl mx-auto">
+    <div className="flex flex-col items-center space-y-20 p-12 max-w-3xl mx-auto">
       
       <nav className="w-full tracking-wide pt-24">
         <Link to="/" className="hover:opacity-80 transition ease-in-out">Home</Link> &gt;{" "}
@@ -69,19 +69,19 @@ const ProductPage = () => {
         <span className="italic">{product.name}</span>
       </nav>
       
-      <h1 className="text-6xl tracking-wide uppercase">{product.name}</h1>
+      <h1 className="text-4xl tracking-wide">{product.name}</h1>
 
-      <div className="flex flex-col lg:flex-row lg:space-x-8 w-full">
+      <div className="flex flex-col space-y-20 w-full">
       <img
         src={product.image}
         alt={product.name}
-        className="h-80 w-auto object-cover rounded-lg shadow-md"
+        className="h-80 w-80 mx-auto object-cover rounded-lg shadow-md"
       />
-       <p className="text-justify tracking-tight lg:w-full lg:pl-24 self-center leading-loose">{product.description} Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. <br/> Expect slight variations in color and texture.</p>
+       <p className="tracking-tight lg:w-full lg:pl-24 self-center leading-loose">{product.description} Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. Expect slight variations in color and texture.</p>
       </div>
 
     
-      <div className="border border-gray-400 p-4 rounded-md text-sm w-1/2 mx-auto text-center tracking-wide">
+      <div className="border border-gray-400 p-4 rounded-md text-sm w-3/4 md:w-1/2 mx-auto text-center tracking-wide">
         <p className="uppercase font-medium">Fabric Content</p>
         <hr className="my-2 border-gray-300" />
         <p>{product.material}</p>
@@ -101,7 +101,7 @@ const ProductPage = () => {
 
       <div className="grid gap-12">
 
-      <div className="flex justify-around text-sm tracking-wide">
+      <div className="flex justify-around text-sm tracking-wider">
         <p>{availableStock > 0 ? `In Stock: ${availableStock}` : "Out of Stock"}</p>
         <p>{inCartCount > 0 ? `In Cart: ${inCartCount}` : "Not in Cart"}</p>
       </div>
@@ -110,7 +110,7 @@ const ProductPage = () => {
         <button
           disabled={addingToCart || availableStock <= 0}
           onClick={handleAddToCart}
-          className={`border rounded-full px-6 py-3 text-sm tracking-wide transition-all duration-200 flex items-center justify-center space-x-2 ${
+          className={`flex items-center justify-center space-x-2 ${
             availableStock <= 0
               ? "opacity-50 cursor-not-allowed border-gray-300"
               : "hover:scale-[1.02]"
@@ -128,13 +128,12 @@ const ProductPage = () => {
 
         <Link
           to="/cart"
-          className="border rounded-full px-6 py-3 text-sm tracking-wide text-center transition-all duration-200 hover:scale-[1.02] flex items-center justify-center"
         >
-          Buy Now
+          <button>Buy Now</button>
         </Link>
       </div>
 
-      <p className="text-center text-sm tracking-wide mt-12">New drops every Sunday at 8:00 MST.</p>
+      <p className="text-center text-sm tracking-wide mt-8">New drops every Sunday at 8:00 MST.</p>
         
       </div>
     </div>

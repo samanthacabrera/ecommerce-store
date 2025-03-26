@@ -8,7 +8,7 @@ const EtsyStore = () => {
                 href="https://www.etsy.com/shop/yarnsara" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block border-b border-current hover:opacity-80 transition duration-200 ease-in-out"
+                className="button inline-block border-b border-current hover:opacity-80 transition duration-200 ease-in-out"
             >
                 Visit Yarnsara on Etsy →
             </a>

@@ -42,7 +42,7 @@ function Contact() {
         onSubmit={handleSubmit} 
         className="space-y-6 text-center"
       >
-        <h1 className="text-2xl md:text-4xl my-6">Contact Us</h1>
+        <h3 className="text-2xl md:text-4xl my-6">Contact Us</h3>
         <input
           type="text"
           name="name"

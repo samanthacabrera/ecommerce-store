@@ -34,16 +34,16 @@ const Checkout = () => {
       <h1 className="text-4xl tracking-wide text-center mb-8 pt-24">Checkout</h1>
 
       <div>
-        <h2 className="text-xl mb-8">Order Summary</h2>
+        <h3 className="text-xl pt-4">Order Summary</h3>
         {cart.length === 0 ? (
           <p className="opacity-50">Your cart is empty.</p>
         ) : (
-          <ul className="space-y-4">
+          <ul className="space-y-12 py-16">
             {cart.map((item) => (
               <li key={`${item.id}-${item.color}`} className="flex justify-between items-center">
                 <div className="flex items-center space-x-4">
                   <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-md" />
-                  <div>
+                  <div className="flex flex-col items-start">
                     <h3 className="text-lg">{item.name}</h3>
                     <p className="text-sm">Qty: {item.quantity}</p>
                   </div>
@@ -53,36 +53,34 @@ const Checkout = () => {
             ))}
           </ul>
         )}
-        <div className="border-t pt-4 mt-4 flex justify-between text-lg">
+        <div className="border-t py-12 flex justify-between text-lg">
           <span>Total:</span>
           <span>${totalPrice.toFixed(2)}</span>
         </div>
       </div>
 
-      <form className="mt-10 space-y-6" onSubmit={handleSubmit}>
-        <h2 className="text-xl">Shipping Details</h2>
+      <form className="flex flex-col items-center justify-center my-40 py-20 text-[lightslategray] bg-white/90 rounded-sm" onSubmit={handleSubmit}>
+        <h3 className="text-2xl md:text-4xl my-6">Shipping Details</h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="border p-3 rounded-md w-full"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="border p-3 rounded-md w-full"
-          />
-        </div>
-
+        <div className="flex flex-col space-y-6 py-12">
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
+        />
         <input
           type="text"
           name="address"
@@ -90,45 +88,42 @@ const Checkout = () => {
           value={formData.address}
           onChange={handleChange}
           required
-          className="border p-3 rounded-md w-full"
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
+        />  
+        <input
+          type="text"
+          name="city"
+          placeholder="City"
+          value={formData.city}
+          onChange={handleChange}
+          required
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
         />
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <input
-            type="text"
-            name="city"
-            placeholder="City"
-            value={formData.city}
-            onChange={handleChange}
-            required
-            className="border p-3 rounded-md w-full"
-          />
-          <input
-            type="text"
-            name="zip"
-            placeholder="ZIP Code"
-            value={formData.zip}
-            onChange={handleChange}
-            required
-            className="border p-3 rounded-md w-full"
-          />
-          <input
-            type="text"
-            name="country"
-            placeholder="Country"
-            value={formData.country}
-            onChange={handleChange}
-            required
-            className="border p-3 rounded-md w-full"
+        <input
+          type="text"
+          name="zip"
+          placeholder="ZIP Code"
+          value={formData.zip}
+          onChange={handleChange}
+          required
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
+        />
+        <input
+          type="text"
+          name="country"
+          placeholder="Country"
+          value={formData.country}
+          onChange={handleChange}
+          required
+          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
           />
         </div>
-
-        <button
-              type="submit"
-              className="w-full bg-white text-[lightslategray] py-3 rounded-md text-lg hover:bg-transparent hover:border hover:text-white transition-all duration-300 ease-in-out"
-          >
-              Checkout with Stripe
-          </button>
+        <button 
+          type="submit" 
+          className="w-fit px-4 py-1 rounded-sm bg-[lightslategray] text-lg text-white/90 border border-opacity-0 hover:text-[lightslategray] hover:bg-transparent hover:border-opacity-100 hover:border-[lightslategray] transition-all duration-300"
+        >
+          Checkout with Stripe
+        </button>
       </form>
     </div>
   );

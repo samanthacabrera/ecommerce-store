@@ -23,11 +23,11 @@ const ShoppingCart = () => {
       {cart.length === 0 ? (
         <p className="opacity-50 text-sm">Your cart is empty.</p>
       ) : (
-        <div className="space-y-8">
+        <div className="">
           {cart.map((item) => (
             <div 
               key={`${item._id}`} 
-              className="flex justify-between items-center border-b border-gray-300 pb-6 transition-all duration-300 hover:scale-[1.01]"
+              className="flex justify-between items-center border-y border-gray-300 py-12 px-2 rounded-sm transition-all duration-300 hover:bg-white/5"
             >
               <div className="flex items-center space-x-6">
                 <img 
@@ -35,9 +35,9 @@ const ShoppingCart = () => {
                   alt={item.name} 
                   className="w-24 h-24 object-cover rounded-lg shadow-md"
                 />
-                <div>
-                  <h2 className="text-lg font-medium tracking-wide">{item.name}</h2>
-                  <p>${item.price.toFixed(2)}</p>
+                <div className="flex flex-col items-start">
+                  <h3 className="text-lg font-medium tracking-wide">{item.name}</h3>
+                  <p className="">${item.price.toFixed(2)}</p>
                   <div className="flex items-center space-x-4 mt-2">
                     <button 
                       onClick={() => updateQuantity(item._id, item.quantity - 1)}
@@ -59,7 +59,7 @@ const ShoppingCart = () => {
               </div>
               <button 
                 onClick={() => removeFromCart(item._id,)}
-                className="text-red-600 bg-white rounded px-4 py-1 text-xs opacity-60 hover:opacity-80 transition ease-in-out"
+                className="text-red-700/80"
               >
                 Remove
               </button>
@@ -69,8 +69,8 @@ const ShoppingCart = () => {
       )}
 
       <div className="flex space-x-6 mt-8">
-        <Link to="/collection" className="border p-2 text-sm">Continue Shopping</Link>
-        <Link to="/checkout" className="border p-2 text-sm">Checkout</Link>
+        <Link to="/collection" className="button">Continue Shopping</Link>
+        <Link to="/checkout" className="button">Checkout</Link>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 const Mission = () => {
     return (
-        <div className="max-w-2xl mx-auto p-12 space-y-6 text-justify">
+        <div className="max-w-2xl mx-auto p-12 space-y-6">
             <h1 className="text-4xl text-center italic mb-24">Our Mission</h1>
             <p>
                 Most textiles in thrift stores never get a second life—left unsold and eventually discarded. An estimated 85% of all textiles in the U.S. end up in landfills each year, with thrift stores often unable to sell the majority of donated items due to overstocking or seasonal demand. I wanted to change that.

@@ -22,14 +22,14 @@ const Collection = ({products}) => {
             </div>
 
             <div className="w-full md:w-1/2 space-y-4">
-              <h2 className="text-2xl tracking-wider uppercase transition-opacity duration-300 hover:opacity-80">
+              <h3 className="text-2xl tracking-wider transition-opacity duration-300 hover:opacity-80">
                 {product.name}
-              </h2>
+              </h3>
               <p className="text-lg opacity-60">${product.price.toFixed(2)}</p>
-              <p className="text-sm opacity-70 leading-relaxed">{product.description}</p>
+              <p className="text-sm opacity-80 md:max-w-sm mx-auto">{product.description}</p>
               <Link 
                 to={`/product/${product._id}`} 
-                className="inline-block border p-2 text-sm"
+                className="button"
               >
                 View Product
               </Link>

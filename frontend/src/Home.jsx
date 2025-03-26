@@ -12,7 +12,7 @@ const Home = ({products}) => {
         <div className="flex flex-col items-center space-y-80 p-2 lg:p-12">
             <Hero/>
             <div>
-                <h3 className="text-4xl text-center italic mb-24">Our Collection</h3>
+                <h2 className="text-4xl text-center italic mb-24">Our Collection</h2>
                 {products.length > 0 ? (
                     products.map((product) => (
                         <Link key={product._id} to={`/product/${product._id}`}>
