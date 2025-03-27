@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="w-full opacity-80 mt-20 py-4 text-xs">
+    <footer className="w-full opacity-80 py-2 text-xs">
       <div className="max-w-screen mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
         
         <div className="text-center md:text-left">

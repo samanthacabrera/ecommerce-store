@@ -8,8 +8,9 @@ import Contact from "./Contact.jsx";
 
 const Collection = ({ products }) => {
     return (
-        <div className="w-full flex flex-col items-center space-y-12 p-2 lg:p-12">
+        <div className="flex flex-col">
             <h2 className="text-4xl text-center italic mb-24">Our Collection</h2>
+            <div className="flex flex-col items-center w-full">
             {products.length > 0 ? (
                 products.map((product) => (
                     <Link key={product._id} to={`/product/${product._id}`}>
@@ -27,20 +28,37 @@ const Collection = ({ products }) => {
             ) : (
                 <p className="text-center text-gray-500">Loading products...</p>
             )}
+            </div>
         </div>
     );
 };
 
+const Section = ({ children, bgColor }) => (
+    <div className={`flex justify-center items-center min-h-screen lg:h-screen lg:snap-start ${bgColor}`}>
+        {children}
+    </div>
+);
+
 const Home = ({ products }) => {
+    const sections = [
+        { component: <Hero />, bgColor: "bg-none" },
+        { component: <Collection products={products} />, bgColor: "bg-[#C76E36]" },
+        { component: <Mission />, bgColor: "bg-[#B04A33]" },
+        { component: <Support />, bgColor: "bg-[#8A9A7B]" },
+        { component: <EtsyStore />, bgColor: "bg-[#F5A623]" },
+        { component: <Medium />, bgColor: "bg-[#B96C4D]" },
+        { component: <Contact />, bgColor: "bg-none" }
+    ];
+
     return (
-        <div className="flex flex-col min-h-screen w-screen items-center space-y-80 p-2 lg:p-12">
-            <Hero />
-            <Collection products={products} />
-            <Mission />
-            <Support />
-            <EtsyStore />
-            <Medium />
-            <Contact />
+        <div className="flex flex-col min-h-screen">
+            <div className="w-screen h-screen overflow-y-scroll lg:scroll-smooth lg:snap-y lg:snap-mandatory">
+                {sections.map(({ component, bgColor }, index) => (
+                    <Section key={index} bgColor={bgColor}>
+                        {component}
+                    </Section>
+                ))}
+            </div>
         </div>
     );
 };

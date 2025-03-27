@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "./Footer";
 
 function Contact() {
   const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
@@ -37,7 +38,8 @@ function Contact() {
   };
 
   return (
-    <div className="flex items-center justify-center p-24 text-[lightslategray] bg-white/90 rounded-sm">
+    <div className="flex flex-col">
+    <div className="flex items-center justify-center p-24 m-12 text-[lightslategray] bg-white/90 rounded-sm">
       <form 
         onSubmit={handleSubmit} 
         className="space-y-6 text-center"
@@ -82,6 +84,8 @@ function Contact() {
           </p>
         )}
       </form>
+      </div>
+      <Footer/>
     </div>
   );
 }

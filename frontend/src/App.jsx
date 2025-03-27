@@ -11,7 +11,6 @@ import Checkout from "./Checkout";
 import Confirmation from "./Confirmation";
 import Policies from "./Policies";
 import PrivacyPolicy from "./Privacy";
-import Footer from "./Footer";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
@@ -65,7 +64,6 @@ function App() {
         <Route path="/terms" element={<Policies />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
-      <Footer />
     </CartProvider>
   );
 }

@@ -9,7 +9,7 @@ html {
   font-family: Helvetica, sans-serif;
   font-weight: 100;
   color: whitesmoke;
-  background-color: lightslategray;
+  background-color: #5b708b;
   letter-spacing: 0.5px;
   text-align: center;
   overflow-x: hidden;
@@ -35,7 +35,7 @@ button,
 
 button:hover,
 .button:hover {
-  background-color: lightslategray;
+  background-color: transparent;
   color: whitesmoke;
   border-color: whitesmoke;
 }
