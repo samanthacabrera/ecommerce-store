@@ -13,18 +13,18 @@ mongoose.connect(process.env.MONGO_URI)
 // product data 
 const products = [
     {
-        name: "Yoga Mat Strap",
-        price: 79.99,
-        inventory: 1,
-        image: "/strap.webp",
-        description: "Our hand-crocheted yoga mat strap made entirely from upcycled 100% cotton textiles."
-    },
-    {
         name: "Upcycled T-Shirt Yarn",
         price: 49.99,
         inventory: 3,
         image: "/tarn.webp",
         description: "Our t-shirt yarn made from 100% upcycled cotton, perfect for your next sustainable craft project."
+    },
+    {
+        name: "Yoga Mat Strap",
+        price: 79.99,
+        inventory: 1,
+        image: "/strap.webp",
+        description: "Our hand-crocheted yoga mat strap made entirely from upcycled 100% cotton textiles."
     }
 ];
 

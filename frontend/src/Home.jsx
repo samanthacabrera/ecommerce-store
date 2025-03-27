@@ -13,7 +13,7 @@ const Collection = ({ products }) => {
         <h2 className="text-4xl italic my-12">
           Our Collection
         </h2>
-        <div className="grid md:grid-cols-2 gap-20">
+        <div className="grid md:grid-cols-2 gap-10">
           {products.length > 0 ? (
             products.map((product) => (
               <div 
@@ -36,7 +36,7 @@ const Collection = ({ products }) => {
                     hover:shadow- 
                     group
                   ">
-                    <div className="p-8 relative z-10">
+                    <div className="p-6 relative z-10">
                       <div className="flex flex-grow justify-between items-center mb-6">
                         <h3 className="text-lg text-white/80">
                           {product.name}
@@ -54,8 +54,8 @@ const Collection = ({ products }) => {
                             aspect-square 
                             object-cover 
                             rounded-xl 
-                            opacity-60
-                            group-hover:opacity-80 
+                            opacity-80
+                            group-hover:opacity-90 
                             transition-all 
                             duration-500 
                             transform 
