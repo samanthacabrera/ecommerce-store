@@ -38,9 +38,9 @@ const Support = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center h-full w-full px-4 md:px-8 lg:px-16">
+    <div className="flex flex-col justify-center h-full w-full px-4">
       <div className="max-w-4xl mx-auto w-full space-y-12">
-        <h2 className="text-4xl text-center italic text-white mb-8">
+        <h2 className="text-4xl italic">
           Ways to Support
         </h2>
         
