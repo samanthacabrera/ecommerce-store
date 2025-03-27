@@ -24,33 +24,36 @@ function Medium() {
     fetchArticles();
   }, []);
 
-  return (
-    <div className="max-w-2xl mx-auto p-12">
-        <h2 className="text-4xl text-center italic mb-24">
-            Monthly Column
+return (
+    <div className="flex flex-col justify-center h-full w-full px-4">
+      <div className="max-w-4xl mx-auto w-full space-y-12">
+        <h2 className="text-4xl italic">
+          Our Monthly Column
         </h2>
-      {articles.length > 0 ? (
-        <div className="flex flex-col space-y-12">
-          {articles.map((article) => (
-            <a
-              key={article.guid}
-              href={article.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block p-6 border rounded-sm hover:scale-[102%] transition duration-500 ease-in-out"
-            >
-              <h3 className="text-lg tracking-wide">
-                {article.title}
-              </h3>
-              <p className="text-sm opacity-80">
-                {new Date(article.pubDate).toDateString()}
-              </p>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <p className="text-center text-gray-500">No yoga articles found.</p>
-      )}
+
+        {articles.length > 0 ? (
+          <div className="flex flex-col space-y-6">
+            {articles.map((article) => (
+              <a
+                key={article.guid}
+                href={article.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-6 bg-white/10 rounded-xl transition-all duration-300 hover:bg-white/20"
+              >
+                <h3 className="text-xl mb-2">
+                  {article.title}
+                </h3>
+                <p className="text-white/80 text-sm opacity-80">
+                  {new Date(article.pubDate).toDateString()}
+                </p>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-white/70">No yoga articles found.</p>
+        )}
+      </div>
     </div>
   );
 }

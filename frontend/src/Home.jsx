@@ -7,30 +7,92 @@ import Medium from "./Medium.jsx";
 import Contact from "./Contact.jsx";
 
 const Collection = ({ products }) => {
-    return (
-        <div className="flex flex-col">
-            <h2 className="text-4xl text-center italic mb-24">Our Collection</h2>
-            <div className="flex flex-col items-center w-full">
-            {products.length > 0 ? (
-                products.map((product) => (
-                    <Link key={product._id} to={`/product/${product._id}`}>
-                        <div className="group border p-4 my-12 hover:scale-105 transition duration-300 ease-in-out">
-                            <h3>{product.name}</h3>
-                            <p>${product.price}</p>
-                            <img 
-                                src={product.image} 
-                                alt={product.name}
-                                className="absolute left-full -top-12 mx-12 w-40 h-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow"
-                            />
-                        </div>
-                    </Link>
-                ))
-            ) : (
-                <p className="text-center text-gray-500">Loading products...</p>
-            )}
+  return (
+    <div className="flex flex-col items-center justify-center h-full w-full px-4">
+      <div className="max-w-4xl mx-auto w-full space-y-12">
+        <h2 className="text-4xl italic my-12">
+          Our Collection
+        </h2>
+        <div className="grid md:grid-cols-2 gap-20">
+          {products.length > 0 ? (
+            products.map((product) => (
+              <div 
+                key={product._id} 
+                className="perspective-1000"
+              >
+                <Link to={`/product/${product._id}`} className="block">
+                  <div className="
+                    relative 
+                    bg-white/5 
+                    backdrop-blur-md 
+                    rounded-xl 
+                    border 
+                    border-white/10 
+                    overflow-hidden 
+                    transform 
+                    transition-all 
+                    duration-500 
+                    hover:scale-[102%] 
+                    hover:shadow-2xl 
+                    group
+                  ">
+                    <div className="p-8 relative z-10">
+                      <div className="flex flex-grow justify-between items-center mb-6">
+                        <h3 className="text-lg text-white/90 transition-colors group-hover:text-white">
+                          {product.name}
+                        </h3>
+                        <span className="text-lg text-white/70 group-hover:text-white">
+                          ${product.price.toFixed(2)}
+                        </span>
+                      </div>
+                      <div 
+                        className="
+                          absolute 
+                          inset-0 
+                          opacity-0 
+                          group-hover:opacity-100 
+                          transition-opacity 
+                          duration-500 
+                          ease-in-out 
+                          bg-gradient-to-br 
+                          from-[#C76E36]/20 
+                          to-[#B04A33]/20
+                        "
+                      />
+                      <div className="relative z-20 mt-4">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="
+                            w-full 
+                            aspect-square 
+                            object-cover 
+                            rounded-xl 
+                            opacity-60
+                            group-hover:opacity-90 
+                            transition-all 
+                            duration-500 
+                            transform 
+                            group-hover:scale-[101%]
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <div className="col-span-full text-center">
+              <p className="text-white/70 text-2xl animate-pulse">
+                Discovering our collection...
+              </p>
             </div>
+          )}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 const Section = ({ children, bgColor }) => (

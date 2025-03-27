@@ -37,55 +37,62 @@ function Contact() {
     }
   };
 
+
   return (
-    <div className="flex flex-col">
-    <div className="flex items-center justify-center p-24 m-12 text-[lightslategray] bg-white/90 rounded-sm">
-      <form 
-        onSubmit={handleSubmit} 
-        className="space-y-6 text-center"
-      >
-        <h3 className="text-2xl md:text-4xl my-6">Contact Us</h3>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="name"
-          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="email"
-          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none"
-          required
-        />
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="message"
-          className="w-full text-center border-b border-neutral-300 pb-2 text-neutral-600 placeholder-neutral-400 bg-transparent focus:outline-none resize-none"
-          rows="4"
-          required
-        />
-        <button 
-          type="submit" 
-          className="w-fit px-4 py-1 rounded-sm bg-[lightslategray] text-white/90 border border-opacity-0 hover:text-[lightslategray] hover:bg-transparent hover:border-opacity-100 hover:border-[lightslategray] transition-all duration-300"
-        >
-          send
-        </button>
-        {status && (
-          <p className="text-neutral-400 text-xs tracking-widest">
-            {status}
-          </p>
-        )}
-      </form>
+    <div className="flex flex-col justify-center w-full px-4">
+      <div className="max-w-4xl mx-auto h-[70vh] w-full space-y-12 my-24 p-6 bg-white/10 rounded-xl ">
+        <h2 className="text-4xl italic text-center text-white my-12">
+          Contact Us
+        </h2>
+
+        <div className="flex items-center justify-center space-y-6 w-full">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 w-full max-w-md"
+          >
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your Name"
+              className="w-full text-center p-3 bg-transparent border-b border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 rounded-md transition-all duration-300"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              className="w-full text-center p-3 bg-transparent border-b border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 rounded-md transition-all duration-300"
+              required
+            />
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Your Message"
+              className="w-full text-center p-3 bg-transparent border-b border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 rounded-md resize-none transition-all duration-300"
+              rows="4"
+              required
+            />
+            <button
+              type="submit"
+              className="w-fit px-4 py-2 bg-white/10 text-white rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300"
+            >
+              Send Message
+            </button>
+
+            {status && (
+              <p className="text-white/80 text-center text-xs mt-4">
+                {status}
+              </p>
+            )}
+          </form>
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
