@@ -32,33 +32,19 @@ const Collection = ({ products }) => {
                     transform 
                     transition-all 
                     duration-500 
-                    hover:scale-[102%] 
-                    hover:shadow-2xl 
+                    hover:scale-[101%] 
+                    hover:shadow- 
                     group
                   ">
                     <div className="p-8 relative z-10">
                       <div className="flex flex-grow justify-between items-center mb-6">
-                        <h3 className="text-lg text-white/90 transition-colors group-hover:text-white">
+                        <h3 className="text-lg text-white/80">
                           {product.name}
                         </h3>
-                        <span className="text-lg text-white/70 group-hover:text-white">
+                        <span className="text-lg text-white/80">
                           ${product.price.toFixed(2)}
                         </span>
                       </div>
-                      <div 
-                        className="
-                          absolute 
-                          inset-0 
-                          opacity-0 
-                          group-hover:opacity-100 
-                          transition-opacity 
-                          duration-500 
-                          ease-in-out 
-                          bg-gradient-to-br 
-                          from-[#C76E36]/20 
-                          to-[#B04A33]/20
-                        "
-                      />
                       <div className="relative z-20 mt-4">
                         <img
                           src={product.image}
@@ -69,7 +55,7 @@ const Collection = ({ products }) => {
                             object-cover 
                             rounded-xl 
                             opacity-60
-                            group-hover:opacity-90 
+                            group-hover:opacity-80 
                             transition-all 
                             duration-500 
                             transform 
@@ -116,7 +102,8 @@ const Home = ({ products }) => {
         <div className="flex flex-col min-h-screen">
             <div className="w-screen h-screen overflow-y-scroll lg:scroll-smooth lg:snap-y lg:snap-mandatory">
                 {sections.map(({ component, bgColor }, index) => (
-                    <Section key={index} bgColor={bgColor}>
+                    // <Section key={index} bgColor={bgColor}>
+                    <Section key={index} bgColor="bg-none">
                         {component}
                     </Section>
                 ))}

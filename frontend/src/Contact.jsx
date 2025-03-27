@@ -40,7 +40,7 @@ function Contact() {
 
   return (
     <div className="flex flex-col justify-center w-full px-4">
-      <div className="max-w-4xl mx-auto h-[70vh] w-full space-y-12 my-24 p-6 bg-white/10 rounded-xl ">
+      <div className="max-w-4xl mx-auto h-[70vh] w-full space-y-12 my-24 bg-white/5 backdrop-blur-md rounded-xl shadow-sm border border-white/10">
         <h2 className="text-4xl italic text-center text-white my-12">
           Contact Us
         </h2>
