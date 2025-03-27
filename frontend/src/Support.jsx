@@ -2,13 +2,13 @@ import React from 'react';
 import { Megaphone, Star, Shirt, ShoppingBag } from 'lucide-react';
 
 const SupportMethod = ({ icon: Icon, title, description }) => (
-  <div className="flex items-start space-x-4 p-4 bg-white/10 rounded-xl transition-all duration-300 hover:bg-white/20">
-    <div className="bg-white/20 p-3 rounded-full">
+  <div className="flex items-start space-x-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-all duration-300 hover:bg-white/10">
+    <div className="bg-white/20 p-3 rounded-full self-center">
       <Icon className="text-white w-6 h-6" />
     </div>
-    <div>
-      <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-      <p className="text-white/80">{description}</p>
+    <div className="self-center p-2">
+      <h3 className="text-lg text-left mb-2">{title}</h3>
+      <p className="text-left">{description}</p>
     </div>
   </div>
 );

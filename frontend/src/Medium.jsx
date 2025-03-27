@@ -39,7 +39,7 @@ return (
                 href={article.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-6 bg-white/10 rounded-xl transition-all duration-300 hover:bg-white/20"
+                className="block p-6 bg-white/5 rounded-xl border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-[101%]"
               >
                 <h3 className="text-xl mb-2">
                   {article.title}

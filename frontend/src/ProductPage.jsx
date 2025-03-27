@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "./CartContext";
+import Footer from "./Footer";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -61,31 +62,28 @@ const ProductPage = () => {
 
 
   return (
+  <div>
     <div className="flex flex-col items-center space-y-20 p-12 max-w-3xl mx-auto">
       
-      <nav className="w-full tracking-wide pt-24">
+      <nav className="absolute top-20 left-4">
         <Link to="/" className="hover:opacity-80 transition ease-in-out">Home</Link> &gt;{" "}
         <Link to="/collection" className="hover:opacity-80 transition ease-in-out">Collection</Link> &gt;{" "}
         <span className="italic">{product.name}</span>
       </nav>
       
-      <h1 className="text-4xl tracking-wide">{product.name}</h1>
-
-      <div className="flex flex-col space-y-20 w-full">
+      <h1 className="text-4xl tracking-wider pt-12">{product.name}</h1>
       <img
         src={product.image}
         alt={product.name}
         className="h-80 w-80 mx-auto object-cover rounded-lg shadow-md"
       />
-       <p className="tracking-tight lg:w-full lg:pl-24 self-center leading-loose">{product.description} Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. Expect slight variations in color and texture.</p>
-      </div>
-
+       <p className="leading-loose">{product.description} Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. Expect slight variations in color and texture.</p>
     
       <div className="border border-gray-400 p-4 rounded-md text-sm w-3/4 md:w-1/2 mx-auto text-center tracking-wide">
         <p className="uppercase font-medium">Fabric Content</p>
         <hr className="my-2 border-gray-300" />
-        <p>{product.material}</p>
-        <p>{product.saved} Upcycled T-shirts</p>
+        <p>100% Cotton</p>
+        <p>3 Upcycled T-shirts</p>
 
         <p className="pt-8 uppercase font-medium">Size & Fit</p>
         <hr className="my-2 border-gray-300" />
@@ -131,12 +129,11 @@ const ProductPage = () => {
         >
           <button>Buy Now</button>
         </Link>
-      </div>
-
-      <p className="text-center text-sm tracking-wide mt-8">New drops every Sunday at 8:00 MST.</p>
-        
+      </div>  
       </div>
     </div>
+    <Footer/>
+  </div>
   );
 };
 

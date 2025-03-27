@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "./CartContext";
 import handleCheckout from "./StripeCheckout";
+import Footer from "./Footer";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const Checkout = () => {
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div className="max-w-4xl mx-auto p-12">
+    <div className="max-w-4xl mx-auto pt-12">
       <h1 className="text-4xl tracking-wide text-center mb-8 pt-24">Checkout</h1>
 
       <div>
@@ -125,6 +126,7 @@ const Checkout = () => {
           Checkout with Stripe
         </button>
       </form>
+      <Footer/>
     </div>
   );
 };

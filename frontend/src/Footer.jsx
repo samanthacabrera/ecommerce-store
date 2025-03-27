@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="w-full opacity-80 py-2 text-xs">
-      <div className="max-w-screen mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <div className="max-w-screen mx-auto px-6 flex flex-col md:grid md:grid-cols-3 items-center space-y-6 md:space-y-0">
         
         <div className="text-center md:text-left">
-          <p>© {new Date().getFullYear()} Yarnsana.</p>
-          <p>All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Yarnsana. All rights reserved.</p>
         </div>
         
-        <nav className="flex space-x-6">
+        <nav className="flex items-center justify-center space-x-6 ">
           <Link to="/terms" className="hover:opacity-70 transition-opacity">Terms</Link>
           <Link to="/privacy" className="hover:opacity-70 transition-opacity">Privacy</Link>
           <a href="https://buymeacoffee.com/samcab" target="_blank" rel="noopener noreferrer">Donate</a>

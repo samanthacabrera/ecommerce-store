@@ -79,7 +79,7 @@ function Contact() {
             />
             <button
               type="submit"
-              className="w-fit px-4 py-2 bg-white/10 text-white rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300"
+              className="w-fit px-4 py-2 bg-white/5 text-white rounded-xl border border-white/5 hover:bg-white/10 hover:border-white/10 hover:shadow-sm transition-all duration-300"
             >
               Send Message
             </button>
