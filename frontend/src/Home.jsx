@@ -70,8 +70,8 @@ const Collection = ({ products }) => {
             ))
           ) : (
             <div className="col-span-full text-center">
-              <p className="text-white/70 text-2xl animate-pulse">
-                Discovering our collection...
+              <p className="text-white/70 text-lg animate-pulse">
+                loading...
               </p>
             </div>
           )}

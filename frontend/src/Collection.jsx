@@ -4,7 +4,7 @@ import Footer from "./Footer";
 const Collection = ({products}) => {
   return (
     <div>
-      <div className="pt-20 max-w-4xl mx-8 lg:mx-auto space-y-20">
+      <div className="min-h-[95vh] pt-20 max-w-4xl mx-8 lg:mx-auto space-y-20">
         <h1 className="text-6xl text-center italic my-24">Explore Our Collection</h1>
         
         <div className="grid gap-40 py-20">
