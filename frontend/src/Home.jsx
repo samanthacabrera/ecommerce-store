@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import Hero from "./Hero.jsx";
 import Mission from "./Mission.jsx";
+import Promise from "./Promise.jsx";
 import Support from "./Support.jsx";
+import Medium from "./Medium.jsx";
 import Contact from "./Contact.jsx";
+
 
 const Collection = ({ products }) => {
   return (
@@ -90,7 +93,9 @@ const Home = ({ products }) => {
         { component: <Hero />, bgColor: "bg-none" },
         { component: <Collection products={products} />, bgColor: "bg-[#C76E36]" },
         { component: <Mission />, bgColor: "bg-[#B04A33]" },
+        { component: <Promise />, bgColor: "bg-[#B04A33]" },
         { component: <Support />, bgColor: "bg-[#8A9A7B]" },
+        // { component: <Medium />, bgColor: "bg-[#8A9A7B]" },
         { component: <Contact />, bgColor: "bg-none" }
     ];
 
