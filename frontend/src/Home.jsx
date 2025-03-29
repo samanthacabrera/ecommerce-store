@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import Hero from "./Hero.jsx";
 import Mission from "./Mission.jsx";
-import EtsyStore from "./EtsyStore.jsx";
 import Support from "./Support.jsx";
-import Medium from "./Medium.jsx";
 import Contact from "./Contact.jsx";
 
 const Collection = ({ products }) => {
@@ -93,8 +91,6 @@ const Home = ({ products }) => {
         { component: <Collection products={products} />, bgColor: "bg-[#C76E36]" },
         { component: <Mission />, bgColor: "bg-[#B04A33]" },
         { component: <Support />, bgColor: "bg-[#8A9A7B]" },
-        { component: <EtsyStore />, bgColor: "bg-[#F5A623]" },
-        { component: <Medium />, bgColor: "bg-[#B96C4D]" },
         { component: <Contact />, bgColor: "bg-none" }
     ];
 
