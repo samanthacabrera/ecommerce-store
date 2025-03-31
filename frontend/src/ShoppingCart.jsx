@@ -72,7 +72,7 @@ const ShoppingCart = () => {
         )}
 
         <div className="flex space-x-6 mt-8">
-          <Link to="/collection" className="button">Continue Shopping</Link>
+          <Link to="/inventory" className="button">Continue Shopping</Link>
           <Link to="/checkout" className="button">Checkout</Link>
         </div>
         <Policies/>

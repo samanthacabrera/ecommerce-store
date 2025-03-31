@@ -4,7 +4,7 @@ import { CartProvider } from "./CartContext";
 import ScrollToTop from "./ScrollToTop";
 import Navbar from "./Navbar";
 import Home from "./Home";
-import Collection from "./Collection";
+import Inventory from "./Inventory";
 import ProductPage from "./ProductPage";
 import ShoppingCart from "./ShoppingCart";
 import Checkout from "./Checkout";
@@ -56,7 +56,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home products={products} />} />
-        <Route path="/collection" element={<Collection products={products} />} />
+        <Route path="/inventory" element={<Inventory products={products} />} />
         <Route path="/product/:id" element={<ProductPage products={products} />} />
         <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/checkout" element={<Checkout />} />

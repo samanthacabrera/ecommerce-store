@@ -4,7 +4,7 @@ const Policies = () => {
   return (
     <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl italic text-center mb-8">Terms & Policies</h1>
-    <div className="max-w-xl mx-auto text-sm p-6 bg-white/5 rounded-xl border border-white/10 space-y-6">      
+    <div className="max-w-xl mx-auto p-6 bg-white/5 rounded-xl border border-white/10 space-y-6">      
         <section>
           <h3 className="mb-1 px-1 border-b w-fit mx-auto">Shipping</h3>
           <p>

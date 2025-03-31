@@ -67,7 +67,7 @@ const ProductPage = () => {
       
       <nav className="absolute top-20 left-4">
         <Link to="/" className="hover:opacity-80 transition ease-in-out">Home</Link> &gt;{" "}
-        <Link to="/collection" className="hover:opacity-80 transition ease-in-out">Collection</Link> &gt;{" "}
+        <Link to="/inventory" className="hover:opacity-80 transition ease-in-out">Inventory</Link> &gt;{" "}
         <span className="italic">{product.name}</span>
       </nav>
       
@@ -79,20 +79,20 @@ const ProductPage = () => {
       />
        <p className="leading-loose">{product.description} Each piece is lovingly crafted from upcycled materials, making every item one-of-a-kind. Expect slight variations in color and texture.</p>
     
-      <div className="border border-gray-400 p-4 rounded-md text-sm w-3/4 md:w-1/2 mx-auto text-center tracking-wide">
+      <div className="bg-white/90 text-neutral-500 border border-gray-400 p-8 rounded-md text-sm w-3/4 md:w-1/2 mx-auto text-center tracking-wide">
         <p className="uppercase font-medium">Fabric Content</p>
-        <hr className="my-2 border-gray-300" />
+        <hr className="my-2 border-neutral-500" />
         <p>100% Cotton</p>
         <p>3 Upcycled T-shirts</p>
 
         <p className="pt-8 uppercase font-medium">Size & Fit</p>
-        <hr className="my-2 border-gray-300" />
+        <hr className="my-2 border-neutral-500" />
         <p>Adjustable Fit</p>
         <p>One Size Fits Most Mats</p>
         <p>Lightweight & Compact</p>
 
         <p className="pt-8 uppercase font-medium">Care Instructions</p>
-        <hr className="my-2 border-gray-300" />
+        <hr className="my-2 border-neutral-500" />
         <p>Spot Clean Only</p>
         <p>Lay Flat to Dry</p>
       </div>

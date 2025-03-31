@@ -12,7 +12,7 @@ const Navbar = () => {
 
             <div className="flex space-x-6">
                 <Link to="/" className="hover:scale-105 transition duration-300 ease-in-out">Home</Link>
-                <Link to="/collection" className="hover:scale-105 transition duration-300 ease-in-out">Collection</Link>
+                <Link to="/inventory" className="hover:scale-105 transition duration-300 ease-in-out">Inventory</Link>
                 <Link to="/cart" className="hover:scale-105 transition duration-300 ease-in-out">Cart ({cartCount})</Link>
             </div>
         </nav>

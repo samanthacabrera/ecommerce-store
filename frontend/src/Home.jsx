@@ -40,10 +40,10 @@ const Collection = ({ products }) => {
                   ">
                     <div className="p-6 relative z-10">
                       <div className="flex flex-grow justify-between items-center mb-6">
-                        <h3 className="text-lg text-white/80">
+                        <h3 className="text-white/80">
                           {product.name}
                         </h3>
-                        <span className="text-lg text-white/80">
+                        <span className="text-white/80">
                           ${product.price.toFixed(2)}
                         </span>
                       </div>
@@ -94,10 +94,10 @@ const Home = ({ products }) => {
         { component: <Hero />, bgColor: "bg-none" },
         { component: <Collection products={products} />, bgColor: "bg-[#C76E36]" },
         { component: <Mission />, bgColor: "bg-[#B04A33]" },
-        { component: <Promise />, bgColor: "bg-[#B04A33]" },
-        { component: <Support />, bgColor: "bg-[#8A9A7B]" },
+        { component: <Promise />, bgColor: "bg-none" },
+        { component: <Support />, bgColor: "bg-[##C76E36]" },
         { component: <Policies />, bgColor: "bg-[#8A9A7B]" },
-        { component: <Contact />, bgColor: "bg-none" }
+        { component: <Contact />, bgColor: "bg-[#B04A33]" }
     ];
 
     return (
@@ -105,7 +105,7 @@ const Home = ({ products }) => {
             <div className="w-screen h-screen overflow-y-scroll lg:scroll-smooth lg:snap-y lg:snap-mandatory">
                 {sections.map(({ component, bgColor }, index) => (
                     // <Section key={index} bgColor={bgColor}>
-                    <Section key={index} bgColor="bg-none">
+                     <Section key={index} bgColor="bg-none"> 
                         {component}
                     </Section>
                 ))}
