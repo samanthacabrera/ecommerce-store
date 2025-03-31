@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
+import Policies from "./Policies";
 import Footer from "./Footer";
 
 const ShoppingCart = () => {
@@ -74,6 +75,7 @@ const ShoppingCart = () => {
           <Link to="/collection" className="button">Continue Shopping</Link>
           <Link to="/checkout" className="button">Checkout</Link>
         </div>
+        <Policies/>
       </div>
       <Footer/>
     </div>
