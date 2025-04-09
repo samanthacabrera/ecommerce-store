@@ -20,15 +20,17 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
         try {
-            const apiUrl = `${API_BASE_URL}/api/products`;
+            // const apiUrl = `${API_BASE_URL}/api/products`;
             // console.log('Attempting to fetch from:', apiUrl);
             
-            const response = await fetch(apiUrl, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            });
+            // const response = await fetch(apiUrl, {
+            //     method: 'GET',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     }
+            // });
+            
+            const response = await fetch('/products.json');
 
             if (!response.ok) {
                 const errorText = await response.text();
