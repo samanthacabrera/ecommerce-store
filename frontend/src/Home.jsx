@@ -3,7 +3,6 @@ import Hero from "./Hero.jsx";
 import Mission from "./Mission.jsx";
 import Promise from "./Promise.jsx";
 import Support from "./Support.jsx";
-import Policies from "./Policies.jsx";
 import Contact from "./Contact.jsx";
 
 
@@ -96,7 +95,6 @@ const Home = ({ products }) => {
         { component: <Mission />, bgColor: "bg-[#B04A33]" },
         { component: <Promise />, bgColor: "bg-none" },
         { component: <Support />, bgColor: "bg-[##C76E36]" },
-        { component: <Policies />, bgColor: "bg-[#8A9A7B]" },
         { component: <Contact />, bgColor: "bg-[#B04A33]" }
     ];
 
